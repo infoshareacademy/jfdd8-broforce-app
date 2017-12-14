@@ -13,6 +13,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   <Router>
     <div>
+
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/personscreen" component={PersonItem}/>
