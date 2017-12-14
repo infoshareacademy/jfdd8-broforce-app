@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
+import 'antd/dist/antd.css'
 import './index.css';
 import App from './App';
 import PersonItem from './PersonItem';
