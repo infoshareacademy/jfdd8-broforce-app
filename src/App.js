@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import PersonItem from './PersonItem';
+import PersonItem from './PersonScreen';
 
 class App extends Component {
   render() {

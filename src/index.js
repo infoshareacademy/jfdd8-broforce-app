@@ -8,7 +8,7 @@ import {
 import 'antd/dist/antd.css'
 import './index.css';
 import App from './App';
-import PersonItem from './PersonItem';
+import PersonScreen from './PersonScreen';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
     <div>
       <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/personscreen" component={PersonItem}/>
+        <Route path="/personscreen" component={PersonScreen}/>
 
 
 
