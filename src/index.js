@@ -19,9 +19,8 @@ ReactDOM.render(
         <Route path="/personscreen" component={PersonItem}/>
         <PersonItem/>
         <Route path="/FoodItem" component={FoodItem}/>
-        <FoodItem/>
-
       </Switch>
+
     </div>
   </Router>,
   document.getElementById('root')
