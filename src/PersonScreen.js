@@ -3,10 +3,24 @@ import React from 'react'
 class PersonScreen extends React.Component {
 
   state = {
-    personFormInput: ''
+    personFormInput: '',
+    people: [
+      {
+        id: 1,
+        name: 'Jacek'
+      },
+      {
+        id: 2,
+        name: 'Jacek'
+      },
+      {
+        id: 3,
+        name: 'Jacek'
+      }
+    ]
   };
 
-  handleSubmit = (event) =>{
+  handleSubmit = (event) => {
     event.preventDefault();
     this.addPerson(
 
@@ -30,11 +44,6 @@ class PersonScreen extends React.Component {
           <input/>
         </form>
         <button>Dodaj ziomka</button>
-
-
-
-
-
 
 
       </div>
