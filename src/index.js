@@ -10,6 +10,7 @@ import './index.css';
 import App from './App';
 import PersonItem from './PersonItem';
 import registerServiceWorker from './registerServiceWorker';
+import OrderScreen from "./OrderScreen";
 
 ReactDOM.render(
   <Router>
@@ -18,7 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/personscreen" component={PersonItem}/>
-
+        <Route path="/orderscreen" component={OrderScreen} />
         <PersonItem/>
 
       </Switch>
