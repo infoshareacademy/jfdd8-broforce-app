@@ -8,6 +8,7 @@ import {
 import './index.css';
 import App from './App';
 import PersonItem from './PersonItem';
+import FoodItem from './FoodItem';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -16,8 +17,9 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/personscreen" component={PersonItem}/>
-
         <PersonItem/>
+        <Route path="/FoodItem" component={FoodItem}/>
+        <FoodItem/>
 
       </Switch>
     </div>
