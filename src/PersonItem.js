@@ -1,10 +1,13 @@
 import React from 'react'
+import 'antd/dist/antd.css'
 
-class PersItem extends React.Component {
+class PersonItem extends React.Component {
   render() {
-    return (<div>Person Items</div>
+    return (<div>Person Items
+        <Icon type="plus-circle-o" />
+      </div>
 
     )
   }
 }
-export default PersItem
+export default PersonItem

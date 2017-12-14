@@ -9,6 +9,7 @@ import 'antd/dist/antd.css'
 import './index.css';
 import App from './App';
 import PersonItem from './PersonItem';
+
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -18,7 +19,7 @@ ReactDOM.render(
         <Route exact path="/" component={App}/>
         <Route path="/personscreen" component={PersonItem}/>
 
-        <PersonItem/>
+
 
       </Switch>
     </div>
