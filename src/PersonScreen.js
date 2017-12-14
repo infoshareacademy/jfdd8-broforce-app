@@ -2,7 +2,19 @@ import React from 'react'
 
 class PersonScreen extends React.Component {
 
+  state = {
+    personFormInput: ''
+  };
 
+  handleSubmit = (event) =>{
+    event.preventDefault();
+    this.addPerson(
+
+    );
+    this.setState({
+      personFormInput: ''
+    })
+  };
 
   render() {
     return (
@@ -17,6 +29,7 @@ class PersonScreen extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input/>
         </form>
+        <button>Dodaj ziomka</button>
 
 
 
