@@ -11,11 +11,11 @@ class PersonScreen extends React.Component {
       },
       {
         id: 2,
-        name: 'Jacek'
+        name: 'Jacek Placek'
       },
       {
         id: 3,
-        name: 'Jacek'
+        name: 'Jacek i Agatka'
       }
     ]
   };
@@ -23,25 +23,51 @@ class PersonScreen extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.addPerson(
-
+      this.state.personFormInput
     );
     this.setState({
       personFormInput: ''
     })
   };
 
+  handleChange = (event) => {
+    this.setState({
+      personFormInput: event.target.value
+    })
+  };
+
+  addPerson = (personName) => {
+    this.setState({
+      people: this.state.people.concat({
+        id: this.state.people.map(
+          task => task.id).reduce(
+          (biggest, next) => Math.max(biggest, next), 0) + 1,
+        name: personName
+      })
+    })
+  };
+
+
   render() {
     return (
       <div>
-
         <ul>
-          <li>
-
-          </li>
+          {
+            this.state.people.map(
+              person => (
+                <li key={person.id}>
+                  {person.name}
+                </li>
+              )
+            )
+          }
         </ul>
 
         <form onSubmit={this.handleSubmit}>
-          <input/>
+          <input
+            value={this.state.personFormInput}
+            onChange={this.handleChange}
+          />
         </form>
         <button>Dodaj ziomka</button>
 
