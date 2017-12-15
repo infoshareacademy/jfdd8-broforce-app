@@ -18,7 +18,7 @@ class Timer extends Component {
 
   render() {
     return (
-      <div>{Math.round(this.state.time / 60)} : {this.state.time % 60}</div>
+      <div>{Math.floor(this.state.time / 60).toString().padStart(2, '0')} : {(this.state.time % 60).toString().padStart(2, '0')}</div>
     )
   }
 }

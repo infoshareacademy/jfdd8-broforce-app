@@ -16,8 +16,9 @@ class App extends Component {
 
         </header>
         <p className="App-intro">
+          <p><strong>Twoja szama będzie za :</strong> </p>
           <Timer/>
-          To get started, edit <code>src/App.js</code> and save to reload.
+
         </p>
       </div>
     );
