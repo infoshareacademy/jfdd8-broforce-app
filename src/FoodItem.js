@@ -15,7 +15,7 @@ class FoodItem extends React.Component {
     render () {
         const size = this.state.size;
         return (
-            <div>
+            <div class="menu">
                 <Button type="primary">Kotlet Schabowy - 9.50 PLN</Button>
                 <Button type="primary" size={size}>Zraz wołowy - 5.80 PLN</Button>
                 <Button type="primary" size={size}>Żurek - 5.50 PLN</Button>
