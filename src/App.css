@@ -27,3 +27,18 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.menu button {
+  background: white;
+  display: block;
+  padding: 40px 50px;
+  width: 100%;
+  color: black;
+}
+.menu button:hover {
+  background: blue;
+  color: white;
+}
+.menu {
+  width: 50%;
+  margin: 0 auto;
+}
