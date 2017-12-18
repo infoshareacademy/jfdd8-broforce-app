@@ -32,6 +32,10 @@
   padding: 20px 50px;
   width: 100%;
 }
+.menu button:hover {
+  background: blue;
+  color: white;
+}
 .menu {
   width: 50%;
   margin: 0 auto;

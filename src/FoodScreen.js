@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import FoodItem from './FoodItem';
 
-class FoodScreen extends Component {
+class App extends Component {
     render() {
         return (
             <div className="App">
