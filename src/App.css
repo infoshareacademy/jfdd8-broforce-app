@@ -30,8 +30,9 @@
 .menu button {
   background: white;
   display: block;
-  padding: 20px 50px;
+  padding: 40px 50px;
   width: 100%;
+  color: black;
 }
 .menu button:hover {
   background: blue;

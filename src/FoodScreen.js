@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo1.svg';
 import './App.css';
 import FoodItem from './FoodItem';
 
-class App extends Component {
+class FoodScreen extends Component {
     render() {
         return (
             <div className="App">
