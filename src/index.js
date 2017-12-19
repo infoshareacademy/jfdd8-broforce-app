@@ -9,18 +9,20 @@ import 'antd/dist/antd.css'
 import './index.css';
 import App from './App';
 import PersonScreen from './PersonScreen';
-
+import FoodScreen from './FoodScreen';
 import registerServiceWorker from './registerServiceWorker';
+import OrderScreen from "./OrderScreen";
 
 ReactDOM.render(
   <Router>
     <div>
+
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/personscreen" component={PersonScreen}/>
-
-
-
+        <Route path="/orderscreen" component={OrderScreen} />
+        <Route path="/foodscreen" component={FoodScreen}/>
+        <FoodScreen/>
       </Switch>
     </div>
   </Router>,
