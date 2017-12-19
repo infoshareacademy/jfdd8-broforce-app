@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import NavigationBar from './NavigationBar'
 import Timer from './Timer'
 import './App.css';
-import PersonItem from './PersonScreen';
 
 class App extends Component {
   render() {
@@ -21,8 +20,9 @@ class App extends Component {
 
           </p>
           <a href="./foodscreen">Gar-kuchnia</a>
+        <a href="./personscreen">Ludziska</a>
 
-        <PersonItem/>
+
       </div>
     );
   }
