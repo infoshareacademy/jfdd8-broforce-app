@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import NavigationBar from "./NavigationBar";
 
-import ButtonNavigation from './ButtonNavigation'
+import ButtonNavigation from "./ButtonNavigation";
 
 class OrderScreen extends Component {
   render() {
     return (
-      <ButtonNavigation></ButtonNavigation>
+      <NavigationBar/>,
+      <ButtonNavigation/>
     )
   }
 }
-export  default OrderScreen
+export default OrderScreen
