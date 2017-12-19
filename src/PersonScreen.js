@@ -5,20 +5,23 @@ class PersonScreen extends React.Component {
   state = {
     personFormInput: '',
     people: [
-      {
-        id: 1,
-        name: 'Jacek'
-      },
-      {
-        id: 2,
-        name: 'Jacek Placek'
-      },
-      {
-        id: 3,
-        name: 'Jacek i Agatka'
-      }
+        {
+          id:'',
+          name:''
+        }
     ]
   };
+
+    componentWillMount() {
+        this.setState({
+            people: JSON.parse(localStorage.getItem('people')) || []
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('people', JSON.stringify(this.state.people));
+    }
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -49,6 +52,11 @@ class PersonScreen extends React.Component {
 
 
   render() {
+    let y = JSON.parse(localStorage.getItem('people'));
+    if (y === undefined) {
+      localStorage.setItem('people', '[{"Adaś Żarłoczek"}]')
+    }
+
     return (
       <div>
         <ul>
