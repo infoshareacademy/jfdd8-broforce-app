@@ -20,7 +20,8 @@ class App extends Component {
 
           </p>
           <a href="./foodscreen">Gar-kuchnia</a>
-        <a href="./personscreen">Ludziska</a>
+       <br/>
+          <a href="./personscreen">Ludziska</a>
 
 
       </div>
