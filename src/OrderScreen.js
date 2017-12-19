@@ -5,7 +5,7 @@ import ButtonNavigation from './ButtonNavigation'
 class OrderScreen extends Component {
   render() {
     return (
-      <ButtonNavigation></ButtonNavigation>
+      <ButtonNavigation>Węgorz</ButtonNavigation>
     )
   }
 }

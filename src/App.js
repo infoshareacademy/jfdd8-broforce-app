@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 import NavigationBar from './NavigationBar'
-import Timer from './Timer'
 import './App.css';
-import PersonItem from './PersonScreen';
+
 
 class App extends Component {
   render() {
@@ -16,13 +15,15 @@ class App extends Component {
 
         </header>
           <p className="App-intro">
-              <p><strong>Twoja szama będzie za :</strong> </p>
-              <Timer/>
-
+              Siema głodomorze
           </p>
           <a href="./foodscreen">Gar-kuchnia</a>
+          <br/>
+        <a href="./personscreen">Ludziska</a>
+          <br/>
+          <a href="./summary">Podsumowanie</a>
 
-        <PersonItem/>
+
       </div>
     );
   }
