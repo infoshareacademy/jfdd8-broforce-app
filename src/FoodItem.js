@@ -4,14 +4,6 @@ import './index.css';
 
 class FoodItem extends React.Component {
 
-    state = {
-        size: 'large',
-    };
-
-    handleSizeChange = (e) => {
-        this.setState({ size: e.target.value });
-    }
-
     render () {
 
         return (
