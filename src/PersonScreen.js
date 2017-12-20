@@ -6,11 +6,6 @@ class PersonScreen extends Component {
 
 
   render() {
-    // let y = JSON.parse(localStorage.getItem('people'));
-    // if (y === undefined) {
-    //   localStorage.setItem('people', '[{"Adaś Żarłoczek"}]');
-    //
-
       return (
         <div>
           <NavigationBar/>,
@@ -18,7 +13,5 @@ class PersonScreen extends Component {
         </div>
       )
     }
-
-  // }
 }
 export default PersonScreen
