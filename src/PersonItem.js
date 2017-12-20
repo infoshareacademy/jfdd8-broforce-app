@@ -5,12 +5,7 @@ class PersonItem extends Component {
 
   state = {
     personFormInput: '',
-    people: [
-      {
-        id:'',
-        name:''
-      }
-    ]
+    people: []
   };
 
   handleSubmit = (event) => {
@@ -52,25 +47,28 @@ class PersonItem extends Component {
 
 
   render() {
-    let y = JSON.parse(localStorage.getItem('people'));
-    if (y === undefined) {
-      localStorage.setItem('people', '[{"Adaś Żarłoczek"}]')
-    }
 
-    return (
-      <div>
-        <ul>
-          {
-            this.state.people.map(
-              person => (
-                <li key={person.id}>
-                  {person.name}
-                  <button>+</button>
-                </li>
-              )
+    const blankStateMsg = (
+      <p>nie masz kolegów</p>
+    )
+
+    const list = (
+      <ul>
+        {
+          this.state.people.map(
+            person => (
+              <li key={person.id}>
+                {person.name}
+                <button>+</button>
+              </li>
             )
-          }
-        </ul>
+          )
+        }
+      </ul>
+    )
+
+    const form = (
+      <div>
 
         <form onSubmit={this.handleSubmit}>
           <input
@@ -79,13 +77,19 @@ class PersonItem extends Component {
           />
         </form>
         <button>Dodaj ziomka</button>
+      </div>
+    )
 
-
+    return (
+      <div>
+        {form}
+        {
+          this.state.people.length === 0 ?
+            blankStateMsg : list
+        }
       </div>
     )
   }
-
-
 }
 
 export default PersonItem
