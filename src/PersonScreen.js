@@ -20,5 +20,6 @@ class PersonScreen extends Component {
       )
     }
 
+  }
 }
 export default PersonScreen
