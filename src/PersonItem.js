@@ -7,16 +7,8 @@ class PersonItem extends Component {
     personFormInput: '',
     people: [
       {
-        id: 1,
-        name: 'Jacek'
-      },
-      {
-        id: 2,
-        name: 'Jacek Placek'
-      },
-      {
-        id: 3,
-        name: 'Jacek i Agatka'
+        id:'',
+        name:''
       }
     ]
   };
@@ -48,7 +40,23 @@ class PersonItem extends Component {
     })
   };
 
+  componentWillMount() {
+    this.setState({
+      people: JSON.parse(localStorage.getItem('people')) || []
+    })
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('people', JSON.stringify(this.state.people));
+  }
+
+
   render() {
+    let y = JSON.parse(localStorage.getItem('people'));
+    if (y === undefined) {
+      localStorage.setItem('people', '[{"Adaś Żarłoczek"}]')
+    }
+
     return (
       <div>
         <ul>
@@ -57,6 +65,7 @@ class PersonItem extends Component {
               person => (
                 <li key={person.id}>
                   {person.name}
+                  <button>+</button>
                 </li>
               )
             )
