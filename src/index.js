@@ -10,6 +10,7 @@ import './index.css';
 import App from './App';
 import PersonScreen from './PersonScreen';
 import FoodScreen from './FoodScreen';
+import Summary from './Summary';
 import registerServiceWorker from './registerServiceWorker';
 import OrderScreen from "./OrderScreen";
 
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path="/personscreen" component={PersonScreen}/>
         <Route path="/orderscreen" component={OrderScreen} />
         <Route path="/foodscreen" component={FoodScreen}/>
+        <Route path="/summary" component={Summary}/>
         <FoodScreen/>
       </Switch>
     </div>
