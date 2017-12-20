@@ -6,20 +6,19 @@ class PersonScreen extends Component {
 
 
   render() {
-    let y = JSON.parse(localStorage.getItem('people'));
-    if (y === undefined) {
-      localStorage.setItem('people', '[{"Adaś Żarłoczek"}]')
-
+    // let y = JSON.parse(localStorage.getItem('people'));
+    // if (y === undefined) {
+    //   localStorage.setItem('people', '[{"Adaś Żarłoczek"}]');
+    //
 
       return (
         <div>
           <NavigationBar/>,
           <PersonItem/>
         </div>
-
       )
     }
 
-  }
+  // }
 }
 export default PersonScreen
