@@ -8,7 +8,7 @@ class PersonScreen extends Component {
   render() {
       return (
         <div>
-          <NavigationBar/>,
+          <NavigationBar/>
           <PersonItem/>
         </div>
       )

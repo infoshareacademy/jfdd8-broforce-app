@@ -45,12 +45,17 @@ class PersonItem extends Component {
     localStorage.setItem('people', JSON.stringify(this.state.people));
   }
 
+  handleAddToOrderList = event => {
+event.preventDefault();
+
+console.log('no dodaj go!')
+  };
 
   render() {
 
     const blankStateMsg = (
       <p>nie masz kolegów</p>
-    )
+    );
 
     const list = (
       <ul>
@@ -59,13 +64,15 @@ class PersonItem extends Component {
             person => (
               <li key={person.id}>
                 {person.name}
-                <button>+</button>
+                <button
+                onClick={this.handleAddToOrderList}
+                >+</button>
               </li>
             )
           )
         }
       </ul>
-    )
+    );
 
     const form = (
       <div>
@@ -78,7 +85,7 @@ class PersonItem extends Component {
         </form>
         <button>Dodaj ziomka</button>
       </div>
-    )
+    );
 
     return (
       <div>
