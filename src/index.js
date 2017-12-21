@@ -15,6 +15,7 @@ import Summary from './Summary';
 import registerServiceWorker from './registerServiceWorker';
 import OrderScreen from "./OrderScreen";
 import LogInScreen from "./LogInScreen";
+import SignUpScreen from "./SignUpScreen";
 
 const config = {
   apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
@@ -37,6 +38,7 @@ ReactDOM.render(
         <Route path="/orderscreen" component={OrderScreen} />
         <Route path="/foodscreen" component={FoodScreen}/>
         <Route path="/summary" component={Summary}/>
+        <Route path="/signupscreen" component={SignUpScreen}/>
         <FoodScreen/>
       </Switch>
     </div>

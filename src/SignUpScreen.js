@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import firebase from 'firebase'
 
-
-class LogInScreen extends Component {
+class SignUpScreen extends Component {
 
   state = {
     username: '',
@@ -12,7 +11,7 @@ class LogInScreen extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(
+    firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
     )
@@ -21,7 +20,7 @@ class LogInScreen extends Component {
   render() {
     return (
       <div>
-        <h1>Zaloguj się</h1>
+        <h1>Zarejestruj się</h1>
         <form
           onSubmit={this.handleSubmit}
         >
@@ -40,14 +39,9 @@ class LogInScreen extends Component {
               type="password"
             />
           </div>
-
-          <div>
-            <button>Feed me!!!</button>
-          </div>
-
           <div>
             <button
-              onClick={this.handleRegistrate}
+
             >
               Zarejestruj się
             </button>
@@ -59,4 +53,4 @@ class LogInScreen extends Component {
   }
 }
 
-export default LogInScreen
+export default SignUpScreen
