@@ -18,6 +18,7 @@ class App extends Component {
               Siema głodomorze
           </p>
           <a href="./foodscreen">Gar-kuchnia</a>
+          <br/>
         <br/>
         <a href="./personscreen">Ludziska</a>
           <br/>

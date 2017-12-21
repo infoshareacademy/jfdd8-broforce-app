@@ -14,11 +14,12 @@ class Summary extends Component {
                     <h1 className="App-title">Podsumowanie Twojego zamówienia</h1>
 
                 </header>
-                <p className="App-intro">
+                <div className="App-intro">
                     <p><strong>Twoja szama będzie za :</strong> </p>
                     <Timer/>
+                    <p><strong>Przygotuj hajs: 1589zł</strong> </p>
 
-                </p>
+                </div>
                 <a href="./foodscreen">Gar-kuchnia</a>
                 <br/>
                 <a href="./personscreen">Ludziska</a>
