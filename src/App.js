@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 import NavigationBar from './NavigationBar'
 import './App.css';
+import LogOut from './LogOut'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <LogOut/>
         <header className="App-header">
 
           <NavigationBar/>

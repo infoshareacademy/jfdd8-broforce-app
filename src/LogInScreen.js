@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import firebase from 'firebase'
+import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+// import Link from 'react'
 
 
 class LogInScreen extends Component {
 
   state = {
-    username: '',
+    email: '',
     password: ''
   };
 
@@ -26,10 +29,10 @@ class LogInScreen extends Component {
           onSubmit={this.handleSubmit}
         >
           <div>
-            nazwa użytkownika
+            e-mail
             <input
               onChange={this.handleChange}
-              name="username"
+              name="email"
             />
           </div>
           <div>
@@ -46,11 +49,11 @@ class LogInScreen extends Component {
           </div>
 
           <div>
-            <button
-              onClick={this.handleRegistrate}
-            >
-              Zarejestruj się
-            </button>
+            <Link to="/signupscreen">
+              <button>
+                Zarejestruj się
+              </button>
+            </Link>
           </div>
 
         </form>

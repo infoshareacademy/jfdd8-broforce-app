@@ -16,6 +16,8 @@ import registerServiceWorker from './registerServiceWorker';
 import OrderScreen from "./OrderScreen";
 import LogInScreen from "./LogInScreen";
 import SignUpScreen from "./SignUpScreen";
+import Auth from "./Auth";
+import LogOut from "./LogOut";
 
 const config = {
   apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
@@ -32,14 +34,16 @@ ReactDOM.render(
     <div>
 
       <Switch>
-        <Route exact path="/" component={App}/>
-        <Route path="/loginscreen" component={LogInScreen}/>
-        <Route path="/personscreen" component={PersonScreen}/>
-        <Route path="/orderscreen" component={OrderScreen} />
-        <Route path="/foodscreen" component={FoodScreen}/>
-        <Route path="/summary" component={Summary}/>
+        <Auth>
+          <Route exact path="/" component={App}/>
+          <Route path="/logout" component={LogOut}/>
+          <Route path="/loginscreen" component={LogInScreen}/>
+          <Route path="/personscreen" component={PersonScreen}/>
+          <Route path="/orderscreen" component={OrderScreen}/>
+          <Route path="/foodscreen" component={FoodScreen}/>
+          <Route path="/summary" component={Summary}/>
+        </Auth>
         <Route path="/signupscreen" component={SignUpScreen}/>
-        <FoodScreen/>
       </Switch>
     </div>
   </Router>,

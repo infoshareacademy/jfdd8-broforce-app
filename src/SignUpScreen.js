@@ -4,7 +4,7 @@ import firebase from 'firebase'
 class SignUpScreen extends Component {
 
   state = {
-    username: '',
+    email: '',
     password: ''
   };
 
@@ -17,6 +17,12 @@ class SignUpScreen extends Component {
     )
   };
 
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  };
+
   render() {
     return (
       <div>
@@ -25,10 +31,10 @@ class SignUpScreen extends Component {
           onSubmit={this.handleSubmit}
         >
           <div>
-            nazwa użytkownika
+            e-mail
             <input
               onChange={this.handleChange}
-              name="username"
+              name="email"
             />
           </div>
           <div>
@@ -48,6 +54,7 @@ class SignUpScreen extends Component {
           </div>
 
         </form>
+
       </div>
     )
   }
