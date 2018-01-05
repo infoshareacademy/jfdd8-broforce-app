@@ -32,7 +32,6 @@ firebase.initializeApp(config);
 ReactDOM.render(
   <Router>
     <div>
-
       <Switch>
         <Auth>
           <Route exact path="/" component={App}/>

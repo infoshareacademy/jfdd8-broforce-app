@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
-import firebase from 'firebase'
+import React, {Component} from 'react';
+import firebase from 'firebase';
 import {Link} from "react-router-dom";
-// import {Link} from "react-router-dom";
-// import Link from 'react'
-
 
 class LogInScreen extends Component {
 
