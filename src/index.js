@@ -18,6 +18,7 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 import Auth from "./Auth";
 import LogOut from "./LogOut";
+import StartScreen from "./StartScreen";
 
 const config = {
   apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
@@ -33,16 +34,13 @@ ReactDOM.render(
   <Router>
     <div>
       <Switch>
+        <Route path="/login" component={StartScreen}/>
         <Auth>
           <Route exact path="/" component={App}/>
-          <Route path="/logout" component={LogOut}/>
-          <Route path="/loginscreen" component={SignInForm}/>
-          <Route path="/personscreen" component={PersonScreen}/>
           <Route path="/orderscreen" component={OrderScreen}/>
           <Route path="/foodscreen" component={FoodScreen}/>
           <Route path="/summary" component={Summary}/>
         </Auth>
-        <Route path="/signup" component={SignUpForm}/>
 
       </Switch>
     </div>
