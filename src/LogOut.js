@@ -8,10 +8,10 @@ class LogOut extends Component {
         <button
           onClick={() => firebase.auth().signOut()}
         >
-          Sign out
+          Wyloguj
         </button>
       </div>
-  )
+  );
   }
 }
 
