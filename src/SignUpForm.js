@@ -1,27 +1,34 @@
 import React, {Component} from 'react';
-import firebase from 'firebase';
-import {Link} from "react-router-dom";
+import firebase from 'firebase'
 
-class LogInScreen extends Component {
+class SignUpForm extends Component {
 
   state = {
     email: '',
     password: ''
   };
 
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  };
+
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(
+    firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
     )
   };
 
+
+
   render() {
     return (
       <div>
-        <h1>Zaloguj się</h1>
+        <h1>Zarejestruj się</h1>
         <form
           onSubmit={this.handleSubmit}
         >
@@ -40,23 +47,18 @@ class LogInScreen extends Component {
               type="password"
             />
           </div>
-
           <div>
-            <button>Feed me!!!</button>
-          </div>
-
-          <div>
-            <Link to="/signupscreen">
-              <button>
-                Zarejestruj się
-              </button>
-            </Link>
+            <h2>Nie masz konta? </h2>
+            <button>
+              Zarejestruj się
+            </button>
           </div>
 
         </form>
+
       </div>
     )
   }
 }
 
-export default LogInScreen
+export default SignUpForm

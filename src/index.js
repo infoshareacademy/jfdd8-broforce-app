@@ -14,8 +14,8 @@ import FoodScreen from './FoodScreen';
 import Summary from './Summary';
 import registerServiceWorker from './registerServiceWorker';
 import OrderScreen from "./OrderScreen";
-import LogInScreen from "./LogInScreen";
-import SignUpScreen from "./SignUpScreen";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 import Auth from "./Auth";
 import LogOut from "./LogOut";
 
@@ -36,13 +36,14 @@ ReactDOM.render(
         <Auth>
           <Route exact path="/" component={App}/>
           <Route path="/logout" component={LogOut}/>
-          <Route path="/loginscreen" component={LogInScreen}/>
+          <Route path="/loginscreen" component={SignInForm}/>
           <Route path="/personscreen" component={PersonScreen}/>
           <Route path="/orderscreen" component={OrderScreen}/>
           <Route path="/foodscreen" component={FoodScreen}/>
           <Route path="/summary" component={Summary}/>
         </Auth>
-        <Route path="/signupscreen" component={SignUpScreen}/>
+        <Route path="/signup" component={SignUpForm}/>
+
       </Switch>
     </div>
   </Router>,
