@@ -16,6 +16,7 @@ import OrderScreen from "./OrderScreen";
 import StartScreen from "./StartScreen";
 import Auth from "./Auth";
 import SignUpScreen from "./SignUpScreen";
+import SignInScreen from "./SignInScreen";
 
 const config = {
   apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/start" component={StartScreen}/>
         <Route path="/signup" component={SignUpScreen}/>
+        <Route path="/signin" component={SignInScreen}/>
         <Auth>
           <Route exact path="/" component={App}/>
           <Route path="/orderscreen" component={OrderScreen}/>

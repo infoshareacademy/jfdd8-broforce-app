@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import firebase from 'firebase'
+import firebase from 'firebase';
 
 class SignUpForm extends Component {
 
@@ -20,10 +20,9 @@ class SignUpForm extends Component {
     firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
-    )
+  );
+    window.location.href='/start';
   };
-
-
 
   render() {
     return (
@@ -47,13 +46,7 @@ class SignUpForm extends Component {
               type="password"
             />
           </div>
-          <div>
-            <h2>Nie masz konta? </h2>
-            <button>
-              Zarejestruj się
-            </button>
-          </div>
-
+          <button>Rejestruję</button>
         </form>
 
       </div>

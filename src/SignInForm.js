@@ -48,16 +48,9 @@ class SignInForm extends Component {
           </div>
 
           <div>
-            <button>Feed me!!!</button>
+            <button>Loguj</button>
           </div>
 
-          <div>
-            <Link to="/signup">
-              <button>
-                Zarejestruj się
-              </button>
-            </Link>
-          </div>
 
         </form>
       </div>

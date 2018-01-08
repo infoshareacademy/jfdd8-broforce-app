@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import './SignInButton.css'
 
 class SignInButton extends Component {
   render(){
     return(
       <button className="signinbutton">
-        Zaloguj się
+        <a href="/signin">Zaloguj się</a>
       </button>
     )
   }

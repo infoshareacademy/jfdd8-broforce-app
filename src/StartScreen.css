@@ -8,11 +8,16 @@ body {
 .app-name {
     font-family: Lato, sans-serif;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 3.5em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
 }
 
 .monster {
-
+    display: block;
+    margin: 0 auto;
+    width: 30vh;
 }
 
 /*.container {*/

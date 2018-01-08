@@ -1,3 +1,21 @@
-.signinbutton {
-    border-radius: 50%;
+.signinbutton button {
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    background: #302f3d;
+    margin: 5px 0;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.signinbutton button:hover {
+    background: white;
+    color: #302f3d;
+}
+.signinbutton button:active {
+    background: white;
+    color: #05b2f7;
 }

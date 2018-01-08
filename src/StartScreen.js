@@ -10,13 +10,14 @@ class StartScreen extends Component {
 
 
   render(){
+
+    const monster = <img className="monster" src={szamello} alt="szamello-monster"/>;
+
     return(
 
       <div>
         <h1 className="app-name">szamello</h1>
-        <div className="monster">
-          <img src={szamello} alt="szamello-monster"/>;
-        </div>
+        {monster}
         <SignInButton/>
         <p>Nie masz konta?
           <Link to="/signup">
