@@ -1,0 +1,62 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #05b2f7;
+}
+.app-name {
+    font-family: Lato, sans-serif;
+    text-transform: uppercase;
+    font-size: 3.5em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.monster {
+    display: block;
+    margin: 0 auto;
+    width: 30vh;
+}
+
+/*.container {*/
+    /*position: absolute;*/
+    /*top:50%;*/
+    /*left:50%;*/
+    /*margin-left: -65px;*/
+    /*margin-top: -20px;*/
+    /*width: 130px;*/
+    /*height: 40px;*/
+    /*text-align: center;*/
+/*}*/
+/*button {*/
+    /*outline:none;*/
+    /*height: 40px;*/
+    /*text-align: center;*/
+    /*width: 130px;*/
+    /*border-radius:40px;*/
+    /*background: #fff;*/
+    /*border: 2px solid green;*/
+    /*color: green;*/
+    /*letter-spacing:1px;*/
+    /*text-shadow:0;*/
+/*font:{*/
+    /*size:12px;*/
+    /*weight:bold;*/
+/*}*/
+/*cursor: pointer;*/
+/*transition: all 0.25s ease;*/
+/*&:hover {*/
+     /*color:white;*/
+     /*background: $green;*/
+ /*}*/
+/*&:active {*/
+ /*//letter-spacing: 2px;*/
+     /*letter-spacing: 2px ;*/
+ /*}*/
+/*&:after {*/
+     /*content:"SUBMIT";*/
+ /*}*/
+/*}*/
+
