@@ -32,7 +32,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Switch>
-        <Route path="/start" component={StartScreen}/>
+        <Route exact path="/start" component={StartScreen}/>
         <Route path="/signup" component={SignUpScreen}/>
         <Route path="/signin" component={SignInScreen}/>
         <Auth>
