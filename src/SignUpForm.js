@@ -21,7 +21,7 @@ class SignUpForm extends Component {
       this.state.email,
       this.state.password
   );
-    window.location.href='/start';
+    window.location.href='/signin';
   };
 
   render() {

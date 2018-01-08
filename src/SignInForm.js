@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
-import {Link} from "react-router-dom";
 
 class SignInForm extends Component {
 
@@ -50,8 +49,6 @@ class SignInForm extends Component {
           <div>
             <button>Loguj</button>
           </div>
-
-
         </form>
       </div>
     )
