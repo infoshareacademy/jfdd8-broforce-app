@@ -18,7 +18,7 @@ class Summary extends Component {
           <p><strong>Przygotuj hajs: 1589zł</strong></p>
 
         </div>
-        <a href="./foodscreen">Gar-kuchnia</a>
+        <a href="./">Menu</a>
 
       </div>
     );
