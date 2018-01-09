@@ -16,12 +16,11 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
     firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
-  );
-    this.props.history.push('/')
+    );
+    this.props.history.push('/food')
   };
 
   render() {

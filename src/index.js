@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 import 'antd/dist/antd.css'
 import './index.css';
-import App from './App';
 import FoodScreen from './FoodScreen';
 import Summary from './Summary';
 import registerServiceWorker from './registerServiceWorker';
@@ -29,16 +28,16 @@ const config = {
 firebase.initializeApp(config);
 
 ReactDOM.render(
-  <Router>
+  <Router
+  >
     <div>
       <Switch>
         <Route exact path="/start" component={StartScreen}/>
         <Route path="/signup" component={SignUpScreen}/>
         <Route path="/signin" component={SignInScreen}/>
         <Auth>
-          <Route exact path="/" component={App}/>
-          <Route path="/orderscreen" component={OrderScreen}/>
-          <Route path="/foodscreen" component={FoodScreen}/>
+          <Route exact path="/" component={FoodScreen}/>
+          <Route path="/order" component={OrderScreen}/>
           <Route path="/summary" component={Summary}/>
         </Auth>
 
