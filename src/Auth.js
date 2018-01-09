@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import SignInScreen from "./SignInScreen";
+import StartScreen from './StartScreen'
 
 class Auth extends Component {
   state = {
@@ -19,7 +20,7 @@ class Auth extends Component {
         ? this.props.children
         : (
           <div>
-            <SignInScreen/>
+            <StartScreen/>
           </div>
         )
     )

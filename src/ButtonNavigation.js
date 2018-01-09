@@ -7,11 +7,11 @@ class ButtonNavigation extends Component {
   render() {
     return (
       <div>
-        <Button href="/" type="primary">
-          <Icon type="left"/>Confirm
+        <Button href="./foodscreen" type="primary">
+          <Icon type="left"/>Continue
         </Button>
-        <Button type="primary">
-          Continue<Icon type="right"/>
+        <Button href="./summary" type="primary">
+          Confirm<Icon type="right"/>
         </Button>
       </div>
     )

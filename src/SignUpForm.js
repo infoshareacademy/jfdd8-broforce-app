@@ -21,7 +21,7 @@ class SignUpForm extends Component {
       this.state.email,
       this.state.password
   );
-    this.props.history.push('/signin')
+    this.props.history.push('/')
   };
 
   render() {

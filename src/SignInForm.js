@@ -20,6 +20,8 @@ class SignInForm extends Component {
     firebase.auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
+    ).then(
+      user => this.props.history.push('/foodscreen')
     )
   };
 

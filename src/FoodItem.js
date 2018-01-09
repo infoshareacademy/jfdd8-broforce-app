@@ -7,7 +7,7 @@ class FoodItem extends React.Component {
     render () {
 
         return (
-            <div class="menu">
+            <div className="menu">
                 <Button type="primary">Kotlet Schabowy - 9.50 PLN<br/>Dodaj do zamówienia</Button>
                 <Button type="primary">Zraz wołowy - 5.80 PLN<br/>Dodaj do zamówienia</Button>
                 <Button type="primary">Żurek - 5.50 PLN<br/>Dodaj do zamówienia</Button>
