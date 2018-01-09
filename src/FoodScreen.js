@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import FoodItem from './FoodItem';
 import NavigationBar from "./NavigationBar";
-import './App.css'
 
 class FoodScreen extends Component {
   render() {

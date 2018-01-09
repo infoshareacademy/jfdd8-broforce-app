@@ -15,7 +15,6 @@ import OrderScreen from "./OrderScreen";
 import StartScreen from "./StartScreen";
 import Auth from "./Auth";
 import SignUpScreen from "./SignUpScreen";
-import SignInScreen from "./SignInScreen";
 
 const config = {
   apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
@@ -28,19 +27,16 @@ const config = {
 firebase.initializeApp(config);
 
 ReactDOM.render(
-  <Router
-  >
+  <Router>
     <div>
       <Switch>
         <Route exact path="/start" component={StartScreen}/>
         <Route path="/signup" component={SignUpScreen}/>
-        <Route path="/signin" component={SignInScreen}/>
         <Auth>
           <Route exact path="/" component={FoodScreen}/>
           <Route path="/order" component={OrderScreen}/>
           <Route path="/summary" component={Summary}/>
         </Auth>
-
       </Switch>
     </div>
   </Router>,

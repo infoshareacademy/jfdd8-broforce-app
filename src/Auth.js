@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import SignInScreen from "./SignInScreen";
 import StartScreen from './StartScreen'
 
 class Auth extends Component {
