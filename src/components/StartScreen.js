@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import szamello from './burger-boysmall.png';
+import szamello from '../burger-boysmall.png';
 import "./StartScreen.css";
 import SignInForm from './SignInForm';
 import {Link} from "react-router-dom";
