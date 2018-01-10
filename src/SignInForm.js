@@ -21,7 +21,7 @@ class SignInForm extends Component {
       this.state.email,
       this.state.password
     ).then(
-      user => this.props.history.push('/foodscreen')
+      user => this.props.history.push('/')
     )
   };
 

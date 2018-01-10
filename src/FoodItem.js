@@ -1,31 +1,58 @@
 import React from 'react'
-import { Button } from 'antd';
+import {Button} from 'antd';
 import './index.css';
+import firebase from 'firebase'
+
+import foodItems from './foodItems'
 
 class FoodItem extends React.Component {
 
-    render () {
+  state = {
+    selectedFoodItemIds: []
+  }
 
-        return (
-            <div className="menu">
-                <Button type="primary">Kotlet Schabowy - 9.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Zraz wołowy - 5.80 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Żurek - 5.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Flaki - 7.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Ziemniaki - 3.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Frytki - 5.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Kasza - 4.00 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Tłuszcz - 0.90 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Kompot - 3.00 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Kefir - 3.50 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Buraczki na ciepło - 3.00 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Kapusta kiszona - 3.00 PLN<br/>Dodaj do zamówienia</Button>
-                <Button type="primary">Marchewka z groszkiem - 3.50 PLN<br/>Dodaj do zamówienia</Button>
-            </div>
-        )
-    }
+  handleChange = event => {
+    const foodItemId = event.target.dataset.foodItemId
+
+    const foodIsChecked = this.state.selectedFoodItemIds.find(
+      item => item === foodItemId
+    ) !== undefined;
+
+    const checkedFoodId = this.state.selectedFoodItemIds.filter(
+      item => item !== foodItemId
+    );
+
+    this.setState({
+      selectedFoodItemIds: foodIsChecked ? checkedFoodId : this.state.selectedFoodItemIds.concat(foodItemId)
+    })
+  };
+
+  handleOrder = event => {
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/orders/' + userUid).set(this.state.selectedFoodItemIds.toString())
+  }
+
+  render() {
+
+    return (
+      <div className="menu">
+        {
+          foodItems.map(
+            foodItem => (
+              <p>
+                <input type="checkbox"
+                       onChange={this.handleChange} data-food-item-id={foodItem.id}
+                />
+                {foodItem.name} - {foodItem.price} PLN
+              </p>
+            )
+          )
+        }
+        <button onClick={this.handleOrder}>Zamów</button>
+      </div>
+    )
+  }
 }
-
 
 
 export default FoodItem;

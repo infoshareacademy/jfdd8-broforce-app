@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FoodItem from './FoodItem';
 import NavigationBar from "./NavigationBar";
-import {Link} from "react-router-dom";
+import OrderButtonNavigation from './OrderButtonNavigation';
 
 class FoodScreen extends Component {
   render() {
@@ -11,9 +11,8 @@ class FoodScreen extends Component {
         <header className="App-header">
           <h1 className="App-title">Wybierz szamę</h1>
         </header>
-        <Link to="/order">
           <FoodItem/>
-        </Link>
+        <OrderButtonNavigation/>
       </div>
     );
   }
