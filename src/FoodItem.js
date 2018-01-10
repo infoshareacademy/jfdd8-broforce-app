@@ -48,7 +48,7 @@ class FoodItem extends React.Component {
             )
           )
         }
-        <button onClick={this.handleOrder}>Order</button>
+        <button onClick={this.handleOrder}>Zamów</button>
       </div>
     )
   }
