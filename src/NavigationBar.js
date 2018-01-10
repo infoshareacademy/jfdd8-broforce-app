@@ -3,6 +3,7 @@ import logo from './logo1.svg';
 import  {
  Navbar
 } from 'react-bootstrap';
+import LogOut from "./LogOut";
 
 
 
@@ -15,6 +16,7 @@ class NavigationBar extends Component {
             <img src={logo} className="App-logo" alt="logo1" />
           </Navbar.Brand>
         </Navbar.Header>
+        <LogOut/>
       </Navbar>
     )
   }

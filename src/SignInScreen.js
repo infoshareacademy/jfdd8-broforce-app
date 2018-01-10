@@ -4,7 +4,7 @@ import SignInForm from "./SignInForm";
 class SignInScreen extends Component {
   render(){
     return(
-      <SignInForm/>
+      <SignInForm history={this.props.history}/>
     );
   }
 }
