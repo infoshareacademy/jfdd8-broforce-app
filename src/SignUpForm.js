@@ -19,8 +19,9 @@ class SignUpForm extends Component {
     firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
+    ).then(
+      user => this.props.history.push('/')
     );
-    this.props.history.push('/')
   };
 
   render() {

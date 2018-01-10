@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import { Switch, Route } from 'react-router-dom'
 import StartScreen from './StartScreen'
+import SignUpScreen from "./SignUpScreen";
 
 class Auth extends Component {
   state = {
@@ -18,9 +20,10 @@ class Auth extends Component {
       this.state.user
         ? this.props.children
         : (
-          <div>
-            <StartScreen/>
-          </div>
+          <Switch>
+            <Route path="/signup" component={SignUpScreen}/>
+            <Route component={StartScreen}/>
+          </Switch>
         )
     )
   }

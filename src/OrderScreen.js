@@ -8,6 +8,7 @@ class OrderScreen extends Component {
       <div>
         <NavigationBar/>
         <ButtonNavigation/>
+
       </div>
 
     )
