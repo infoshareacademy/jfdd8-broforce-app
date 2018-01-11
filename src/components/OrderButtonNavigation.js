@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Button, Icon} from 'antd'
+import { Link } from 'react-router-dom'
 
 
 class OrderButtonNavigation extends Component {
@@ -7,9 +8,9 @@ class OrderButtonNavigation extends Component {
   render() {
     return (
       <div>
-        <Button href="./order" type="primary">
+        <Link to={'/order'}>
           Twoje zamówienie<Icon type="right"/>
-        </Button>
+        </Link>
       </div>
     )
   }

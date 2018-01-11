@@ -17,28 +17,30 @@ class OrderItems extends Component {
       snapshot => {
         const snapshotValue = snapshot.val();
         this.setState({
-          orderedFood: snapshotValue.split(",")
+          time: snapshotValue === null ? null : new Date(parseInt(snapshotValue.time)),
+          orderedFood: snapshotValue === null ? [] : snapshotValue.selectedFoodItemIds ? snapshotValue.selectedFoodItemIds.split(",") : []
         });
       }
     )
   }
 
   render() {
+
     const orderedFoodItems = this.state.orderedFood.map(
       id => foodItems.find(item => item.id === id)
     )
     return(
-      <div>
+      <div> Zostało zamówione ({this.state.time && this.state.time.toString()}):
         {
           orderedFoodItems.map(
             item => (
               <p>{item.name} {item.price}</p>
             )
           )
-        }
+        } Wartość zamówienia :
         {
           orderedFoodItems.reduce((total, next) => total + next.price, 0)
-        }
+        } PLN
       </div>
     )
   }

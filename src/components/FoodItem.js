@@ -30,7 +30,10 @@ class FoodItem extends React.Component {
 
   handleOrder = event => {
     const userUid = firebase.auth().currentUser.uid
-    firebase.database().ref('/orders/' + userUid).set(this.state.selectedFoodItemIds.toString())
+    firebase.database().ref('/orders/' + userUid).set({
+      selectedFoodItemIds: this.state.selectedFoodItemIds.toString(),
+      time: Date.now().toString()
+    })
   }
 
   componentDidMount() {
@@ -42,7 +45,7 @@ class FoodItem extends React.Component {
       snapshot => {
         const snapshotValue = snapshot.val();
         this.setState({
-          selectedFoodItemIds: snapshotValue.split(",")
+          selectedFoodItemIds: snapshotValue === null ? [] : snapshotValue.selectedFoodItemIds ? snapshotValue.selectedFoodItemIds.split(",") : []
         });
       }
     )

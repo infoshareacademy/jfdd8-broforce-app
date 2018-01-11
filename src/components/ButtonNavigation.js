@@ -1,18 +1,20 @@
 import React, {Component} from 'react'
-import {Button, Icon} from 'antd'
+import {Icon} from 'antd'
 
+
+import { Link } from 'react-router-dom'
 
 class ButtonNavigation extends Component {
 
   render() {
     return (
       <div>
-        <Button href="./" type="primary">
+        <Link to={'/'}>
           <Icon type="left"/>Menu
-        </Button>
-        <Button href="./summary" type="primary">
+        </Link>
+        <Link to={'/order'}>
           Podsumowanie<Icon type="right"/>
-        </Button>
+        </Link>
       </div>
     )
   }
