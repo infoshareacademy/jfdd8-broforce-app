@@ -8,11 +8,11 @@ import {
 } from 'react-router-dom';
 import 'antd/dist/antd.css'
 import './index.css';
-import FoodScreen from './FoodScreen';
-import Summary from './Summary';
+import FoodScreen from './components/FoodScreen';
+import Summary from './components/Summary';
 import registerServiceWorker from './registerServiceWorker';
-import OrderScreen from "./OrderScreen";
-import Auth from "./Auth";
+import OrderScreen from "./components/OrderScreen";
+import Auth from "./components/Auth";
 
 
 const config = {

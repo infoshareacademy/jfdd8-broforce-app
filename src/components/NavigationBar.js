@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo1.svg';
+import logo from '../logo1.svg';
 import  {
  Navbar
 } from 'react-bootstrap';
