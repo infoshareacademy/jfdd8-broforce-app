@@ -10,16 +10,15 @@ class OrderItems extends Component {
 
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid;
-    console.log("userId: " + userUid)
+
 
     firebase.database().ref('/orders/' + userUid).on(
       'value',
       snapshot => {
         const snapshotValue = snapshot.val();
         this.setState({
-          orderedFood: snapshotValue.split(",").map(item => parseInt(item))
+          orderedFood: snapshotValue.split(",")
         });
-        console.log(this.state.orderedFood)
       }
     )
   }

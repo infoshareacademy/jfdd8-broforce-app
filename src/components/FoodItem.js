@@ -12,6 +12,7 @@ class FoodItem extends React.Component {
   }
 
   handleChange = event => {
+
     const foodItemId = event.target.dataset.foodItemId
 
     const foodIsChecked = this.state.selectedFoodItemIds.find(
@@ -32,6 +33,22 @@ class FoodItem extends React.Component {
     firebase.database().ref('/orders/' + userUid).set(this.state.selectedFoodItemIds.toString())
   }
 
+  componentDidMount() {
+    const userUid = firebase.auth().currentUser.uid;
+
+
+    firebase.database().ref('/orders/' + userUid).on(
+      'value',
+      snapshot => {
+        const snapshotValue = snapshot.val();
+        this.setState({
+          selectedFoodItemIds: snapshotValue.split(",")
+        });
+      }
+    )
+  }
+
+
   render() {
 
     return (
@@ -40,8 +57,11 @@ class FoodItem extends React.Component {
           foodItems.map(
             foodItem => (
               <p>
-                <input type="checkbox"
-                       onChange={this.handleChange} data-food-item-id={foodItem.id}
+                <input
+                  type="checkbox"
+                  onChange={this.handleChange}
+                  checked={this.state.selectedFoodItemIds.includes(foodItem.id)}
+                  data-food-item-id={foodItem.id}
                 />
                 {foodItem.name} - {foodItem.price} PLN
               </p>
