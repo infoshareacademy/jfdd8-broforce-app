@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import StartScreen from './StartScreen';
 import SignUpScreen from "./SignUpScreen";
 
@@ -19,8 +19,8 @@ class Auth extends Component {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   state => ({
     user: state.auth.user
   })
-)(Auth)
+)(Auth))

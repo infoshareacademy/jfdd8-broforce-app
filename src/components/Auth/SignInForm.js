@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import firebase from 'firebase';
+import {connect} from 'react-redux';
+import {signIn} from '../../state/auth';
 import '../App.css';
 
 class SignInForm extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -18,41 +20,46 @@ class SignInForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(
+    this.props.signIn(
       this.state.email,
       this.state.password
-    ).then(
-      user => this.props.history.push('/')
     )
+      .catch(
+        error => this.setState({error})
+      )
+      .then(
+        user => this.props.history.push('/')
+      )
   };
 
   render() {
     return (
       <div className="wrapper sign-in">
         <h1>Zaloguj się</h1>
+        { this.state.error && <p style={{ color: 'red' }}>{ this.state.error.message }</p>}
         <form className='login-form'
-          onSubmit={this.handleSubmit}
+              onSubmit={this.handleSubmit}
         >
           <div>
 
             <input className="login-input" placeholder="e-mail"
-              onChange={this.handleChange}
-              name="email"
+                   onChange={this.handleChange}
+                   name="email"
             />
           </div>
           <div>
 
             <input className="login-input" placeholder="hasło"
 
-              onChange={this.handleChange}
-              name="password"
-              type="password"
+                   onChange={this.handleChange}
+                   name="password"
+                   type="password"
             />
           </div>
 
-            <button className="login-button">Zaloguj się</button>
+          <button className="login-button">Zaloguj się</button>
 
-            <button className="login-button g-button">Google+</button>
+          <button className="login-button g-button">Google+</button>
 
         </form>
       </div>
@@ -60,4 +67,9 @@ class SignInForm extends Component {
   }
 }
 
-export default SignInForm
+export default connect (
+  state => ({
+    user: state.auth.user
+  }),
+  { signIn }
+)(SignInForm)

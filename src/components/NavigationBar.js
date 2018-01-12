@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from '../logo1.svg';
+import logo from '../img/logo1.svg';
 import  {
  Navbar
 } from 'react-bootstrap';
@@ -36,4 +36,4 @@ class NavigationBar extends Component {
 
 export default connect(
   state => ({user: state.auth.user}
-)(NavigationBar))
+))(NavigationBar)

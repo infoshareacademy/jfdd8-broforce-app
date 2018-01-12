@@ -21,7 +21,7 @@ export const disableSync = () => dispatch => {
 };
 
 export const signIn = (...args) => dispatch => {
-  var provider = new firebase.auth.GoogleAuthProvider();
+  const provider = new firebase.auth.GoogleAuthProvider();
 
   return firebase.auth().signInWithPopup(provider)
   // return firebase.auth().signInWithEmailAndPassword(...args)
