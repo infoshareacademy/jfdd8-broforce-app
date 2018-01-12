@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
+import './App.css';
 
 class SignInForm extends Component {
 
@@ -27,30 +28,32 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper sign-in">
         <h1>Zaloguj się</h1>
-        <form
+        <form className='login-form'
           onSubmit={this.handleSubmit}
         >
           <div>
-            e-mail
-            <input
+
+            <input className="login-input" placeholder="e-mail"
               onChange={this.handleChange}
               name="email"
             />
           </div>
           <div>
-            hasło
-            <input
+
+            <input className="login-input" placeholder="hasło"
+
               onChange={this.handleChange}
               name="password"
               type="password"
             />
           </div>
 
-          <div>
-            <button>Loguj</button>
-          </div>
+            <button className="login-button">Zaloguj się</button>
+
+            <button className="login-button g-button">Google+</button>
+
         </form>
       </div>
     )
