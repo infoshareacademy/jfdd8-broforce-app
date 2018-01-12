@@ -1,29 +1,22 @@
 import React from 'react';
-import firebase from 'firebase'
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import './index.css';
 import FoodScreen from './components/FoodScreen';
 import Summary from './components/Summary';
 import registerServiceWorker from './registerServiceWorker';
 import OrderScreen from "./components/OrderScreen";
 import Auth from "./components/Auth";
+import setupFirebase from './setupFirebase'
+import store from './store'
 
-
-const config = {
-  apiKey: "AIzaSyA48KznyNkTo7AFbCPWTTFJdRAEntabD-I",
-  authDomain: "szamello-app.firebaseapp.com",
-  databaseURL: "https://szamello-app.firebaseio.com",
-  projectId: "szamello-app",
-  storageBucket: "",
-  messagingSenderId: "357665956589"
-};
-firebase.initializeApp(config);
+setupFirebase()
 
 ReactDOM.render(
   <Router>
