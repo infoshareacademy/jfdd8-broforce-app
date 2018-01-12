@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import moment from 'moment'
+import 'moment/locale/pl';
 import foodItems from './foodItems'
+
+moment.locale('pl');
 
 class OrderItems extends Component {
 
@@ -11,6 +15,9 @@ class OrderItems extends Component {
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid;
 
+    setInterval(
+      () => this.forceUpdate(), 1000
+    );
 
     firebase.database().ref('/orders/' + userUid).on(
       'value',
@@ -30,7 +37,9 @@ class OrderItems extends Component {
       id => foodItems.find(item => item.id === id)
     )
     return(
-      <div> Zostało zamówione ({this.state.time && this.state.time.toString()}):
+      <div> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
+      <p>Twoje zamówienie:</p>
+
         {
           orderedFoodItems.map(
             item => (
