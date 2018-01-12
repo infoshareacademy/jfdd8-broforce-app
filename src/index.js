@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,29 +8,29 @@ import {
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './index.css';
-import FoodScreen from './components/FoodScreen';
-import Summary from './components/Summary';
-import registerServiceWorker from './registerServiceWorker';
-import OrderScreen from "./components/OrderScreen";
-import Auth from "./components/Auth";
-import setupFirebase from './setupFirebase'
-import store from './store'
 
-setupFirebase()
+import FoodScreen from './components/OrderScreen/FoodScreen';
+import Summary from './components/OrderScreen/Summary';
+import OrderScreen from "./components/OrderScreen/OrderScreen";
+import Auth from "./components/Auth";
+import registerServiceWorker from './registerServiceWorker';
+import store from './store';
+
 
 ReactDOM.render(
-  <Router>
-    <div>
-      <Auth>
-        <Switch>
-          <Route exact path="/" component={FoodScreen}/>
-          <Route path="/order" component={OrderScreen}/>
-          <Route path="/summary" component={Summary}/>
-        </Switch>
-      </Auth>
-
-    </div>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Auth>
+          <Switch>
+            <Route exact path="/" component={FoodScreen}/>
+            <Route path="/order" component={OrderScreen}/>
+            <Route path="/summary" component={Summary}/>
+          </Switch>
+        </Auth>
+      </div>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();

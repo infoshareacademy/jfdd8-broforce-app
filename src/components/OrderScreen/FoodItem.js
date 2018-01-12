@@ -1,5 +1,5 @@
 import React from 'react'
-import '../index.css';
+import '../../index.css';
 import firebase from 'firebase'
 
 import foodItems from './foodItems'

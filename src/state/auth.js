@@ -9,6 +9,8 @@ export const enableSync = () => dispatch => {
   dispatch(disableSync());
   unsubscribe = firebase.auth().onAuthStateChanged(
     user => dispatch({ type: 'auth/SET_USER', user }),
+    error => console.log(error),
+    () => console.log('done')
   )
 };
 
@@ -19,11 +21,14 @@ export const disableSync = () => dispatch => {
 };
 
 export const signIn = (...args) => dispatch => {
-  return firebase.auth().signInWithEmailAndPassword(...args)
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  return firebase.auth().signInWithPopup(provider)
+  // return firebase.auth().signInWithEmailAndPassword(...args)
 };
 
 export const signUp = (email, password) => dispatch => {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  return firebase.auth().createUserWithEmailAndPassword(email, password)
 };
 
 export const signOut = () => dispatch => {

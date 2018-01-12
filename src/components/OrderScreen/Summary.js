@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import NavigationBar from './NavigationBar'
+import NavigationBar from '../NavigationBar'
 import Timer from './Timer'
-import './App.css';
+import '../App.css';
 
 class Summary extends Component {
   render() {
