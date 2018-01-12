@@ -1,23 +1,13 @@
-import React, { Component } from 'react'
-import firebase from 'firebase'
-import { Switch, Route } from 'react-router-dom'
-import StartScreen from './StartScreen'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+import StartScreen from './StartScreen';
 import SignUpScreen from "./SignUpScreen";
 
 class Auth extends Component {
-  state = {
-    user: null
-  };
-
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(
-      user => this.setState({ user })
-    )
-  }
-
   render() {
     return (
-      this.state.user
+      this.props.user
         ? this.props.children
         : (
           <Switch>
@@ -29,4 +19,8 @@ class Auth extends Component {
   }
 }
 
-export default Auth
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(Auth)
