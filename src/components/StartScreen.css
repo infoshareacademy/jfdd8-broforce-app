@@ -17,7 +17,22 @@ body {
 .monster {
     display: block;
     margin: 0 auto;
-    width: 30vh;
+    width: 12vh;
+}
+.zaloosh {
+    width: 50%;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+.zaloosh p {
+    margin-right: 10px;
+}
+.inline-b {
+    display: inline-block;
+    color: white;
+}
+p.inline-b {
+    text-transform: none;
 }
 
 /*.container {*/

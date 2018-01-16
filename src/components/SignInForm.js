@@ -29,7 +29,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div className="wrapper sign-in">
-        <h1>Zaloguj się</h1>
+
         <form className='login-form'
           onSubmit={this.handleSubmit}
         >
@@ -50,7 +50,7 @@ class SignInForm extends Component {
             />
           </div>
 
-            <button className="login-button">Zaloguj się</button>
+            <button className="login-button login-b">Zaloguj się</button>
 
             <button className="login-button g-button">Google+</button>
 
