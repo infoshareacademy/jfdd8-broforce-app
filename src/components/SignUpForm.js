@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
-import './App.css';
 
 class SignUpForm extends Component {
 
@@ -27,26 +26,31 @@ class SignUpForm extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <h1 className="suph1">Załóż konto</h1>
+      <div>
+        <h1>Zarejestruj się</h1>
         <form
           onSubmit={this.handleSubmit}
         >
           <div>
-            <input className="login-input"
+            e-mail
+            <input
               onChange={this.handleChange}
               name="email"
             />
           </div>
           <div>
-            <input className="login-input"
+            hasło
+            <input
               onChange={this.handleChange}
               name="password"
               type="password"
             />
           </div>
-          <button className="login-button zaloosh-b">Załóż</button>
+          <button>Rejestruję</button>
+
         </form>
+
+        <a href="./">wróc</a>
 
       </div>
     )
