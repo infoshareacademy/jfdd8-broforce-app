@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import firebase from 'firebase'
+import { signOut} from "../../state/auth";
+import { connect } from 'react-redux';
 
 class LogOut extends Component {
   render() {
     return (
       <div>
         <button
-          onClick={() => firebase.auth().signOut()}
+          onClick={() => signOut}
         >
           Wyloguj
         </button>
@@ -15,5 +16,8 @@ class LogOut extends Component {
   }
 }
 
-export default LogOut
+export default connect(
+  null,
+  {signOut}
+)(LogOut)
 
