@@ -14,11 +14,10 @@ class StartScreen extends Component {
         <h1 className="app-name">szamello</h1>
         {monster}
         <SignInForm history={this.props.history}/>
-        <p>Nie masz konta?
-          <Link to="/signup">
-            Załóż
-          </Link>
-        </p>
+        <div className="zaloosh">
+            <p className="inline-b">Nie masz konta?</p>
+            <Link to="/signup" className="inline-b">Załóż</Link>
+        </div>
       </div>
     );
   }
