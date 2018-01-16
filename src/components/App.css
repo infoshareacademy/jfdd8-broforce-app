@@ -1,51 +1,45 @@
 /*.App {*/
-  /*text-align: center;*/
+/*text-align: center;*/
 /*}*/
 
 /*.App-logo {*/
-  /*animation: App-logo-spin infinite 20s linear;*/
-  /*height: 80px;*/
+/*animation: App-logo-spin infinite 20s linear;*/
+/*height: 80px;*/
 /*}*/
 
 /*.App-header {*/
-  /*background-color: dodgerblue;*/
-  /*height: 150px;*/
-  /*padding: 20px;*/
-  /*color: white;*/
+/*background-color: dodgerblue;*/
+/*height: 150px;*/
+/*padding: 20px;*/
+/*color: white;*/
 /*}*/
 
 /*.App-title {*/
-  /*font-size: 1.5em;*/
-  /*color: white;*/
+/*font-size: 1.5em;*/
+/*color: white;*/
 /*}*/
 
 /*.App-intro {*/
-  /*font-size: large;*/
+/*font-size: large;*/
 /*}*/
 
 /*@keyframes App-logo-spin {*/
-  /*from { transform: rotate(0deg); }*/
-  /*to { transform: rotate(360deg); }*/
+/*from { transform: rotate(0deg); }*/
+/*to { transform: rotate(360deg); }*/
 /*}*/
+
+
 body {
-  background-image: url("back2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("back2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
 }
-.menu button {
-  background: white;
-  display: block;
-  padding: 40px 50px;
-  width: 100%;
-  color: black;
-}
-.menu button:hover {
-  background: dodgerblue;
-  color: white;
-}
+h1 {color: white;}
+
 .menu {
-  width: 50%;
-  margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
 }
 .login-input {
     background-color: transparent;
@@ -57,58 +51,133 @@ body {
     text-align: center;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0px 9999px #05b2f7;
+    -webkit-box-shadow: inset 0 0 0px 9999px #05b2f7;
 }
 .wrapper {
-  width: 40%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
 }
 .login-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .login-button {
-  border-radius: 50px;
-  background: white;
-  color: dodgerblue;
-  border: none;
-  padding: 15px;
-  font-size: 15px;
-  width: 180px;
-  font-weight: bold;
-  margin-bottom: 15px;
+    border-radius: 50px;
+    background: white;
+    color: dodgerblue;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    width: 180px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 .login-button:hover, .login-button:active  {
-  background: darkblue;
-  color: white;
+    background: darkblue;
+    color: white;
 }
 .login-b {margin-top: 20px;}
 .sign-in h1, p {
-  color: white;
-  text-transform: uppercase;
+    color: white;
+    text-transform: uppercase;
 }
 .sign-in h1 {
-  font-size: 18px;
+    font-size: 18px;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+    color: white;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white;
-  text-transform: uppercase;
+    color: white;
+    text-transform: uppercase;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: white;
-  text-transform: uppercase;
+    color: white;
+    text-transform: uppercase;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white;
-  text-transform: uppercase;
+    color: white;
+    text-transform: uppercase;
 }
+.suph1 {text-transform: uppercase; font-size: 18px; margin-top: 25%;}
+.zaloosh-b {margin-top: 20px;}
+
+.App-logo {
+    width: 40px;
+}
+
+/* Customize the label (the container) */
+.container-czeks {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-czek input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-czek:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-czek input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container-czek input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-czek .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
