@@ -21,14 +21,17 @@ export const disableSync = () => dispatch => {
 };
 
 export const signIn = (...args) => dispatch => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  return firebase.auth().signInWithPopup(provider)
-  // return firebase.auth().signInWithEmailAndPassword(...args)
+  return firebase.auth().signInWithEmailAndPassword(...args)
 };
 
-export const signUp = (email, password) => dispatch => {
-  return firebase.auth().createUserWithEmailAndPassword(email, password)
+export const signInGoogle = (...args) => dispatch => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(provider)
+};
+
+export const signUp= (email, password) => dispatch => {
+  return firebase.auth().createUserWithEmailAndPassword(email, password).then(
+      user => this.props.history.push('/'))
 };
 
 export const signOut = () => dispatch => {

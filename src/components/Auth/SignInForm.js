@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {signIn} from '../../state/auth';
 import '../App.css';
+import SignInWithGoogle from "./SignInWithGoogle";
 
 class SignInForm extends Component {
 
@@ -58,9 +59,7 @@ class SignInForm extends Component {
           </div>
 
           <button className="login-button">Zaloguj się</button>
-
-          <button className="login-button g-button">Google+</button>
-
+          <SignInWithGoogle/>
         </form>
       </div>
     )
