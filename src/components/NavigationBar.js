@@ -4,6 +4,7 @@ import  {
  Navbar
 } from 'react-bootstrap';
 import LogOut from "./LogOut";
+import './App.css';
 
 
 
