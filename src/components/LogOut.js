@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
-import { signOut} from "../../state/auth";
+import firebase from 'firebase'
+import './App.css';
+import logo from '../img/logo1.svg';
+import { signOut} from "../state/auth";
 import { connect } from 'react-redux';
 
 class LogOut extends Component {
   render() {
     return (
-      <div>
-        {firebase.auth().currentUser.email}
-        <button
-          onClick={() => signOut}
+
+
+        <div className="username">
+            <img src={logo} className="App-logo" alt="logo1" />
+        {this.props.user.email}
+
+        <button className="login-button"
+          onClick={this.props.signOut}
         >
           Wyloguj
         </button>
@@ -19,7 +26,9 @@ class LogOut extends Component {
 }
 
 export default connect(
-  null,
+  state => ({
+      user: state.auth.user
+  }),
   {signOut}
 )(LogOut)
 

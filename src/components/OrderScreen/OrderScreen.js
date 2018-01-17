@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavigationBar from "../NavigationBar";
+import LogOut from "../LogOut";
 import ButtonNavigation from "../ButtonNavigation";
 import OrderItems from "./OrderItems";
 
@@ -7,7 +7,7 @@ class OrderScreen extends Component {
   render() {
     return (
       <div>
-        <NavigationBar/>
+         <LogOut />
         <ButtonNavigation/>
         <OrderItems/>
 
