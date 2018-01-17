@@ -3,10 +3,10 @@ import firebase from 'firebase';
 import './App.css';
 
 const errorMessages = {
-    'auth/email-already-in-use': 'No już mamy takie konto :)',
+    'auth/email-already-in-use': 'Taki użytkownik już istnieje  :)',
   'auth/user-not-found': 'Niema takiego użytkownika',
-  'auth/wrong-password': 'Błędne hasło!',
-  'auth/invalid-email': 'adres email niepoprawny!'
+  'auth/wrong-password': 'Nieprawidłowe hasło!',
+  'auth/invalid-email': 'Adres email niepoprawny, spróbuj ponownie'
 
 };
 
