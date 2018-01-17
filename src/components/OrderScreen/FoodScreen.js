@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FoodItem from './FoodItem';
-import NavigationBar from "./NavigationBar";
-import OrderButtonNavigation from './OrderButtonNavigation';
+import NavigationBar from "../NavigationBar";
+import OrderButtonNavigation from '../OrderButtonNavigation';
 
 class FoodScreen extends Component {
   render() {
