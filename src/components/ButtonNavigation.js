@@ -9,11 +9,8 @@ class ButtonNavigation extends Component {
   render() {
     return (
       <div>
-        <Link to={'/'}>
+        <Link to={'/'} className="login-button">
           <Icon type="left"/>Menu
-        </Link>
-        <Link to={'/order'}>
-          Podsumowanie<Icon type="right"/>
         </Link>
       </div>
     )
