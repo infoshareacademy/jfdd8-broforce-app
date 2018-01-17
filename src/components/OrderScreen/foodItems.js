@@ -9,7 +9,8 @@ export default [
   {id: '8', name: 'Tłuszcz', price: 0.90},
   {id: '9', name: 'Kompot', price: 3.00},
   {id: '10', name: 'Kefir', price: 3.50},
-  {id: '11', name: 'Buraczki na ciepło', price: 3.00},
-  {id: '12', name: 'Kapusta kiszona', price: 3.00},
-  {id: '13', name: 'Marchewka z groszkiem', price: 3.50},
+    {id: '11', name: 'Buraczki na ciepło', price: 3.00},
+    {id: '12', name: 'Kapusta kiszona', price: 3.00},
+    {id: '13', name: 'Marchewka z groszkiem', price: 3.50},
+
 ]

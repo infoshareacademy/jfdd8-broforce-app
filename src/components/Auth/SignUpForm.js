@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import firebase from 'firebase';
+import { signUp } from "../../state/auth";
+import { connect } from "react-redux";
 
 const errorMessages = {
   'auth/email-already-in-use': 'Taki użytkownik już istnieje :)',
@@ -23,10 +24,13 @@ class SignUpForm extends Component {
   };
 
   handleSubmit = event => {
+    const { email, password, ...other } = this.state;
     event.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(
-      this.state.email,
-      this.state.password
+
+    this.props.signUp(
+      email,
+      password,
+      other
     ).then(
       user => this.props.history.push('/')
     ).catch(
@@ -68,4 +72,7 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm
+export default connect(
+  null,
+  { signUp }
+)(SignUpForm)
