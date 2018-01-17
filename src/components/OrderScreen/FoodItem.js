@@ -3,6 +3,7 @@ import {Button} from 'antd';
 import '../index.css';
 import firebase from 'firebase'
 import './App.css';
+import { connect } from 'react-redux'
 
 import foodItems from './foodItems'
 
@@ -38,7 +39,7 @@ class FoodItem extends React.Component {
   }
 
   componentDidMount() {
-    const userUid = firebase.auth().currentUser.uid;
+    const userUid = this.props.user.uid;
 
 
     firebase.database().ref('/orders/' + userUid).on(
@@ -81,4 +82,8 @@ class FoodItem extends React.Component {
 }
 
 
-export default FoodItem;
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(FoodItem);

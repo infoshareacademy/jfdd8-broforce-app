@@ -24,7 +24,7 @@ class OrderItems extends Component {
       snapshot => {
         const snapshotValue = snapshot.val();
         this.setState({
-          time: snapshotValue === null ? null : new Date(parseInt(snapshotValue.time)),
+          time: snapshotValue === null ? null : new Date(parseInt(snapshotValue.time, 10)),
           orderedFood: snapshotValue === null ? [] : snapshotValue.selectedFoodItemIds ? snapshotValue.selectedFoodItemIds.split(",") : []
         });
       }

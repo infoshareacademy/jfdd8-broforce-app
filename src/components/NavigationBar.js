@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import logo from '../logo1.svg';
+import logo from '../img/logo1.svg';
 import  {
  Navbar
 } from 'react-bootstrap';
+import {
+Link
+} from 'react-router-dom';
 import LogOut from "./LogOut";
 import './App.css';
+import { connect } from 'react-redux';
 
 
 
@@ -23,4 +27,6 @@ class NavigationBar extends Component {
   }
 }
 
-export default NavigationBar
+export default connect(
+  state => ({user: state.auth.user}
+))(NavigationBar)
