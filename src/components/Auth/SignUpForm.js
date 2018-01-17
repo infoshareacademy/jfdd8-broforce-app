@@ -54,7 +54,10 @@ class SignUpForm extends Component {
             />
           </div>
           <button>Rejestruję</button>
+
         </form>
+
+        <a href="./">wróc</a>
 
       </div>
     )

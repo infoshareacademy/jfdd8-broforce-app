@@ -1,6 +1,8 @@
 import React from 'react'
-import '../../index.css';
+import {Button} from 'antd';
+import '../index.css';
 import firebase from 'firebase'
+import './App.css';
 import { connect } from 'react-redux'
 
 import foodItems from './foodItems'
@@ -59,19 +61,21 @@ class FoodItem extends React.Component {
         {
           foodItems.map(
             foodItem => (
-              <p>
+              <label className="container-czek">
                 <input
                   type="checkbox"
                   onChange={this.handleChange}
                   checked={this.state.selectedFoodItemIds.includes(foodItem.id)}
                   data-food-item-id={foodItem.id}
                 />
+                  <span class="checkmark"></span>
                 {foodItem.name} - {foodItem.price} PLN
-              </p>
+
+              </label>
             )
           )
         }
-        <button onClick={this.handleOrder}>Zamów</button>
+        <button className="login-button" onClick={this.handleOrder}>Zamów</button>
       </div>
     )
   }

@@ -7,6 +7,7 @@ import {
 Link
 } from 'react-router-dom';
 import LogOut from "./LogOut";
+import './App.css';
 import { connect } from 'react-redux';
 
 
@@ -14,21 +15,13 @@ import { connect } from 'react-redux';
 class NavigationBar extends Component {
   render() {
     return (
-      <Navbar className="fixedBottom">
+      <Navbar>
         <Navbar.Header>
-          <Navbar.Brand pullLeft>
-            <Link to="/"><img src={logo} className="App-logo" alt="logo1" /></Link>
+          <Navbar.Brand>
+            <img src={logo} className="App-logo" alt="logo1" />
           </Navbar.Brand>
-          {/*<Navbar.Toggle />*/}
-        {/*<Navbar.Collapse>*/}
-          <Navbar.Text>
-            Signed in as: <Navbar.Link href="#">Mark Otto</Navbar.Link>
-          </Navbar.Text>
-          <Navbar.Text pullRight>
-            <LogOut/>
-          </Navbar.Text>
-        {/*</Navbar.Collapse>*/}
         </Navbar.Header>
+        <LogOut/>
       </Navbar>
     )
   }

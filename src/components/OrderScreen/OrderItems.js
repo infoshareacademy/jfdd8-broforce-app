@@ -35,7 +35,7 @@ class OrderItems extends Component {
 
     const orderedFoodItems = this.state.orderedFood.map(
       id => foodItems.find(item => item.id === id)
-    )
+    );
     return(
       <div> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
       <p>Twoje zamówienie:</p>
