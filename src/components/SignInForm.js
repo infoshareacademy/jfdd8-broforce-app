@@ -2,11 +2,20 @@ import React, {Component} from 'react';
 import firebase from 'firebase';
 import './App.css';
 
+const errorMessages = {
+    'auth/email-already-in-use': 'Taki użytkownik już istnieje  :)',
+  'auth/user-not-found': 'Niema takiego użytkownika',
+  'auth/wrong-password': 'Nieprawidłowe hasło!',
+  'auth/invalid-email': 'Adres email niepoprawny, spróbuj ponownie'
+
+};
+
 class SignInForm extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -23,6 +32,8 @@ class SignInForm extends Component {
       this.state.password
     ).then(
       user => this.props.history.push('/')
+    ).catch(
+      error => this.setState({ error })
     )
   };
 
@@ -48,6 +59,7 @@ class SignInForm extends Component {
               name="password"
               type="password"
             />
+            {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
           </div>
 
             <button className="login-button login-b">Zaloguj się</button>
