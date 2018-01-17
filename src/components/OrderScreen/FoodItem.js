@@ -1,8 +1,6 @@
 import React from 'react'
-import {Button} from 'antd';
-import '../index.css';
 import firebase from 'firebase'
-import './App.css';
+import '../App.css';
 import { connect } from 'react-redux'
 
 import foodItems from './foodItems'

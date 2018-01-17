@@ -3,9 +3,6 @@ import logo from '../img/logo1.svg';
 import  {
  Navbar
 } from 'react-bootstrap';
-import {
-Link
-} from 'react-router-dom';
 import LogOut from "./LogOut";
 import './App.css';
 import { connect } from 'react-redux';
