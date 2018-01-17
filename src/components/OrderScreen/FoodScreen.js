@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FoodItem from './FoodItem';
-import LogOut from "./LogOut";
-import OrderButtonNavigation from './OrderButtonNavigation';
+import LogOut from "../LogOut";
+import OrderButtonNavigation from '../OrderButtonNavigation';
 
 class FoodScreen extends Component {
     render() {
