@@ -68,6 +68,8 @@ input:-webkit-autofill {
     flex-direction: column;
     align-items: center;
 }
+
+
 .login-button {
     border-radius: 50px;
     background: white;
@@ -109,9 +111,6 @@ input:-webkit-autofill {
 .suph1 {text-transform: uppercase; font-size: 18px; margin-top: 25%;}
 .zaloosh-b {margin-top: 20px;}
 
-.App-logo {
-    width: 40px;
-}
 
 /* Customize the label (the container) */
 .container-czek {
@@ -179,5 +178,39 @@ input:-webkit-autofill {
     transform: rotate(45deg);
 }
 
-.username {}
+/*logOut*/
+
+.App-logo {
+    width: 40px;
+    float: left;
+}
+
+.username {
+    width: 40%;
+    margin: 0 auto;
+}
+.logout-wrap {
+
+}
+.logout-button {
+    border-radius: 50px;
+    background: white;
+    color: dodgerblue;
+    border: none;
+    padding: 12px;
+    font-size: 10px;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 20px;
+    float: right;
+}
+.logout-button:hover, .logout-button:active  {
+    background: darkblue;
+    color: white;
+}
+
+.user-wyloguj {
+    float: left;
+}
+
 
