@@ -30,8 +30,9 @@ export const signInGoogle = () => dispatch => {
 };
 
 export const signUp= (email, password) => dispatch => {
-  return firebase.auth().createUserWithEmailAndPassword(email, password).then(
-      user => this.props.history.push('/'))
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
+    // .then(
+    //   user => this.props.history.push('/'))
 };
 
 export const signOut = () => dispatch => {
