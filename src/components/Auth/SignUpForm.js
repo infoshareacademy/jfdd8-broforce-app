@@ -2,11 +2,19 @@ import React, {Component} from 'react';
 import { signUp } from "../../state/auth";
 import { connect } from "react-redux";
 
+const errorMessages = {
+  'auth/email-already-in-use': 'Taki użytkownik już istnieje :)',
+  'auth/weak-password': 'Zbyt słabe hasło',
+  'auth/invalid-email': 'adres email niepoprawny spróbuj ponownie'
+};
+
+
 class SignUpForm extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -23,13 +31,12 @@ class SignUpForm extends Component {
       email,
       password,
       other
-    ).catch(
-      error => this.setState({ error })
     ).then(
       user => this.props.history.push('/')
+    ).catch(
+      error => this.setState({ error })
     )
   };
-
 
   render() {
     return (
@@ -53,6 +60,7 @@ class SignUpForm extends Component {
               type="password"
             />
           </div>
+          {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
           <button>Rejestruję</button>
 
         </form>

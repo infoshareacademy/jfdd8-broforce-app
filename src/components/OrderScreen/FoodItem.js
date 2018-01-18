@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../index.css';
 import firebase from 'firebase'
 import '../App.css';
 import { connect } from 'react-redux'
@@ -9,11 +10,11 @@ class FoodItem extends React.Component {
 
   state = {
     selectedFoodItemIds: []
-  }
+  };
 
   handleChange = event => {
 
-    const foodItemId = event.target.dataset.foodItemId
+    const foodItemId = event.target.dataset.foodItemId;
 
     const foodIsChecked = this.state.selectedFoodItemIds.find(
       item => item === foodItemId
@@ -29,7 +30,7 @@ class FoodItem extends React.Component {
   };
 
   handleOrder = event => {
-    const userUid = firebase.auth().currentUser.uid
+    const userUid = firebase.auth().currentUser.uid;
     firebase.database().ref('/orders/' + userUid).set({
       selectedFoodItemIds: this.state.selectedFoodItemIds.toString(),
       time: Date.now().toString()
