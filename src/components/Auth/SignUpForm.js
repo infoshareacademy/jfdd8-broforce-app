@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { signUp } from "../../state/auth";
 import { connect } from "react-redux";
+import '../App.css';
+import logo from '../../img/logo1.svg';
 
 const errorMessages = {
   'auth/email-already-in-use': 'Taki użytkownik już istnieje :)',
@@ -40,28 +42,32 @@ class SignUpForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sign-up wrapper">
+        <img src={logo} className="signup-logo" alt="logo1"/>
+
         <h1>Zarejestruj się</h1>
         <form
           onSubmit={this.handleSubmit}
         >
           <div>
-            e-mail
-            <input
+
+            <input className="login-input"
               onChange={this.handleChange}
               name="email"
+                   placeholder="e-mail"
             />
           </div>
           <div>
-            hasło
-            <input
+
+            <input className="login-input"
               onChange={this.handleChange}
               name="password"
               type="password"
+                   placeholder="hasło"
             />
           </div>
           {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
-          <button>Rejestruję</button>
+          <button className="login-button">Rejestruję</button>
 
         </form>
 

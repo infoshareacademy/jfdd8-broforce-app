@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SignUpForm from "./SignUpForm";
+import '../App.css';
 
 class SignUpScreen extends Component {
   render(){

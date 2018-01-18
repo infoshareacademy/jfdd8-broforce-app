@@ -90,8 +90,19 @@ input:-webkit-autofill {
     color: white;
     text-transform: uppercase;
 }
-.sign-in h1 {
-    font-size: 18px;
+.sign-in h1, .sign-up h1 {
+    font-size: 22px;
+}
+.signup-logo {
+margin: 20px 0;
+    width: 50px;
+}
+
+.sign-up a {
+    color: white;
+}
+.sign-up a:hover, .sign-up a:active  {
+    color: darkblue;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: white;
