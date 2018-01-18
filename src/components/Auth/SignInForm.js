@@ -4,6 +4,14 @@ import {signIn} from '../../state/auth';
 import '../App.css';
 import SignInWithGoogle from "./SignInWithGoogle";
 
+const errorMessages = {
+  'auth/email-already-in-use': 'Taki użytkownik już istnieje  :)',
+  'auth/user-not-found': 'Niema takiego użytkownika',
+  'auth/wrong-password': 'Nieprawidłowe hasło!',
+  'auth/invalid-email': 'Adres email niepoprawny, spróbuj ponownie'
+
+};
+
 class SignInForm extends Component {
 
   state = {
@@ -36,8 +44,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div className="wrapper sign-in">
-        <h1>Zaloguj się</h1>
-        { this.state.error && <p style={{ color: 'red' }}>{ this.state.error.message }</p>}
+
         <form className='login-form'
               onSubmit={this.handleSubmit}
         >
@@ -56,9 +63,10 @@ class SignInForm extends Component {
                    name="password"
                    type="password"
             />
+            {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
           </div>
 
-          <button className="login-button">Zaloguj się</button>
+          <button className="login-button login-b">Zaloguj się</button>
           <SignInWithGoogle/>
         </form>
       </div>
