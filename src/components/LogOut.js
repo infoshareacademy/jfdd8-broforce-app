@@ -1,33 +1,36 @@
 import React, {Component} from 'react';
 import './App.css';
 import logo from '../img/logo1.svg';
-import { signOut} from "../state/auth";
-import { connect } from 'react-redux';
+import {signOut} from "../state/auth";
+import {connect} from 'react-redux';
 
 class LogOut extends Component {
-  render() {
-    return (
+    render() {
+        return (
 
 
-        <div className="username">
-            <img src={logo} className="App-logo" alt="logo1" />
-        {this.props.user.email}
+            <div className="username">
 
-        <button className="login-button"
-          onClick={this.props.signOut}
-        >
-          Wyloguj
-        </button>
+                    <img src={logo} className="App-logo" alt="logo1"/>
+                    <div className="user-wyloguj">
+                    {this.props.user.email}
 
-      </div>
-  );
-  }
+                    <button className="logout-button"
+                            onClick={this.props.signOut}
+                    >
+                        Wyloguj
+                    </button>
+                    </div>
+
+            </div>
+        );
+    }
 }
 
 export default connect(
-  state => ({
-      user: state.auth.user
-  }),
-  {signOut}
+    state => ({
+        user: state.auth.user
+    }),
+    {signOut}
 )(LogOut)
 
