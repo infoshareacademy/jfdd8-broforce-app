@@ -3,6 +3,7 @@ import firebase from 'firebase'
 import moment from 'moment'
 import 'moment/locale/pl';
 import foodItems from './foodItems'
+import { connect } from 'react-redux'
 
 moment.locale('pl');
 
@@ -13,7 +14,7 @@ class OrderItems extends Component {
   };
 
   componentDidMount() {
-    const userUid = firebase.auth().currentUser.uid;
+    const userUid = this.props.user.uid;
 
     setInterval(
       () => this.forceUpdate(), 1000
@@ -54,4 +55,4 @@ class OrderItems extends Component {
     )
   }
 }
-export default OrderItems
+export default connect(state => ({ user: state.auth.user }))(OrderItems)

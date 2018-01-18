@@ -24,7 +24,7 @@ export const signIn = (...args) => dispatch => {
   return firebase.auth().signInWithEmailAndPassword(...args)
 };
 
-export const signInGoogle = (...args) => dispatch => {
+export const signInGoogle = () => dispatch => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider)
 };

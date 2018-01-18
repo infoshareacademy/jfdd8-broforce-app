@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import firebase from 'firebase'
 import './App.css';
 import logo from '../img/logo1.svg';
 import { signOut} from "../state/auth";
