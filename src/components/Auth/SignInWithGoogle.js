@@ -7,7 +7,7 @@ class SignInWithGoogle extends Component {
 
   render(){
     return(
-      <button
+      <button type="button"
         className="login-button g-button"
         onClick={this.props.signInGoogle}
       >Google+</button>
