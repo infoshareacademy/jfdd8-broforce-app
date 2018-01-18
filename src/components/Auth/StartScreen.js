@@ -15,8 +15,8 @@ class StartScreen extends Component {
         {monster}
         <SignInForm history={this.props.history}/>
         <div className="zaloosh">
-            <p className="inline-b">Nie masz konta?</p>
-            <Link to="/signup" className="inline-b">Załóż</Link>
+            <p className="inline-b"></p>
+            <Link to="/signup" className="inline-b">Nie masz konta? Załóż</Link>
         </div>
       </div>
     );
