@@ -8,7 +8,7 @@ class OrderButtonNavigation extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Link to={'/order'} className="login-button">
           Twoje zamówienie<Icon type="right"/>
         </Link>
