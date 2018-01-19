@@ -67,7 +67,7 @@ class FoodItem extends React.Component {
                   checked={this.state.selectedFoodItemIds.includes(foodItem.id)}
                   data-food-item-id={foodItem.id}
                 />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 {foodItem.name} - {foodItem.price} PLN
 
               </label>
