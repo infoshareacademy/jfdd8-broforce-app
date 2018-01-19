@@ -7,10 +7,12 @@ import '../App.css';
 class OrderScreen extends Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
           <LogOut />
-        <ButtonNavigation/>
+<div className="order">
         <OrderItems/>
+</div>
+          <ButtonNavigation/>
 
       </div>
 
