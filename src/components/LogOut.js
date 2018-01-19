@@ -9,10 +9,10 @@ class LogOut extends Component {
         return (
 
 
-            <div className="username">
+            <div className="top wrapper">
 
                     <img src={logo} className="App-logo" alt="logo1"/>
-                    <div className="user-wyloguj">
+
                     {this.props.user.email}
 
                     <button className="logout-button"
@@ -20,7 +20,7 @@ class LogOut extends Component {
                     >
                         Wyloguj
                     </button>
-                    </div>
+
 
             </div>
         );

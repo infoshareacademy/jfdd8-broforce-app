@@ -4,6 +4,7 @@ import moment from 'moment'
 import 'moment/locale/pl';
 import foodItems from './foodItems'
 import { connect } from 'react-redux'
+import '../App.css';
 
 moment.locale('pl');
 
