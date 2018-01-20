@@ -56,7 +56,10 @@ class FoodItem extends React.Component {
   render() {
 
     return (
-      <div className="menu">
+      <div className="menu-wrapper">
+        <div className="title">
+        <h1 className="App-title">Wybierz szamę</h1>
+        </div>
         {
           foodItems.map(
             foodItem => (
@@ -74,7 +77,9 @@ class FoodItem extends React.Component {
             )
           )
         }
+        <div className="zamow-button">
         <button className="login-button" onClick={this.handleOrder}>Zamów</button>
+        </div>
       </div>
     )
   }

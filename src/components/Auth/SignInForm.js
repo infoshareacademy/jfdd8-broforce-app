@@ -66,7 +66,7 @@ class SignInForm extends Component {
             {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
           </div>
 
-          <button className="login-button login-b">Zaloguj się</button>
+          <button className="login-button login-b">zaloguj się</button>
           <SignInWithGoogle/>
         </form>
       </div>

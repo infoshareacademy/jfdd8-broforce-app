@@ -45,7 +45,7 @@ class SignUpForm extends Component {
       <div className="sign-up wrapper">
         <img src={logo} className="signup-logo" alt="logo1"/>
 
-        <h1>Zarejestruj się</h1>
+
         <form
           onSubmit={this.handleSubmit}
         >
@@ -67,11 +67,11 @@ class SignUpForm extends Component {
             />
           </div>
           {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
-          <button className="login-button">Rejestruję</button>
+          <button className="login-button">rejestruję</button>
 
         </form>
 
-        <a href="./">wróc</a>
+        <a href="./">wróć</a>
 
       </div>
     )

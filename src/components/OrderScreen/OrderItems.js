@@ -4,6 +4,7 @@ import moment from 'moment'
 import 'moment/locale/pl';
 import foodItems from './foodItems'
 import { connect } from 'react-redux'
+import '../App.css';
 
 moment.locale('pl');
 
@@ -38,7 +39,7 @@ class OrderItems extends Component {
       id => foodItems.find(item => item.id === id)
     );
     return(
-      <div> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
+      <div className="wrapper"> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
       <p>Twoje zamówienie:</p>
 
         {
