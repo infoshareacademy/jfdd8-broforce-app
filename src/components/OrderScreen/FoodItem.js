@@ -37,13 +37,6 @@ class FoodItem extends React.Component {
     })
   };
 
-  handleClearAll = event => {
-    const userUid = firebase.auth().currentUser.uid;
-    firebase.database().ref('/orders/' + userUid).set({
-      selectedFoodItemIds: null,
-      time: null
-    })
-  };
 
   componentDidMount() {
     const userUid = this.props.user.uid;

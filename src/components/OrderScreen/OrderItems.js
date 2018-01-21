@@ -48,7 +48,7 @@ class OrderItems extends Component {
               <p>{item.name} {item.price}</p>
             )
           )
-        } Wartość zamówienia :
+        } Przygotuj :
         {
           orderedFoodItems.reduce((total, next) => total + next.price, 0)
         } PLN
