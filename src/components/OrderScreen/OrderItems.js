@@ -39,8 +39,8 @@ class OrderItems extends Component {
       id => foodItems.find(item => item.id === id)
     );
     return(
-      <div className="wrapper"> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
-      <p>Twoje zamówienie:</p>
+      <div className="wrapper"> Szama będzie {moment(this.state.time).add(15, 'minutes').fromNow()}
+      <p>Zamówiłeś:</p>
 
         {
           orderedFoodItems.map(
