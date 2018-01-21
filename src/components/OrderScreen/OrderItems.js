@@ -17,7 +17,7 @@ class OrderItems extends Component {
   componentDidMount() {
     const userUid = this.props.user.uid;
 
-    setInterval(
+    this.interval = setInterval(
       () => this.forceUpdate(), 1000
     );
     this.path = 'orders/' + userUid;
@@ -34,6 +34,7 @@ class OrderItems extends Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.interval);
     firebase.database().ref(this.path).off('value', this.listener)
   };
 
@@ -49,10 +50,12 @@ class OrderItems extends Component {
         {
           orderedFoodItems.map(
             item => (
-              <p>{item.name} {item.price}</p>
+              <p
+              key={item.id.toString()}
+              >{item.name} {item.price}</p>
             )
           )
-        } Przygotuj :
+        } Przygotuj:
         {
           orderedFoodItems.reduce((total, next) => total + next.price, 0)
         } PLN

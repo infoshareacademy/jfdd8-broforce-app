@@ -73,8 +73,11 @@ class FoodItem extends React.Component {
         {
           foodItems.map(
             foodItem => (
-              <label className="container-czek menu-items">
+              <label
+                key={foodItem.id.toString()}
+                className="container-czek menu-items">
                 <input
+                  key={foodItem.id.toString()}
                   type="checkbox"
                   onChange={this.handleChange}
                   checked={this.state.selectedFoodItemIds.includes(foodItem.id)}
