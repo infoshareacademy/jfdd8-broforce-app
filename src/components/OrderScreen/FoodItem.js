@@ -71,7 +71,7 @@ class FoodItem extends React.Component {
         {
           foodItems.map(
             foodItem => (
-              <label className="container-czek">
+              <label className="container-czek menu-items">
                 <input
                   type="checkbox"
                   onChange={this.handleChange}
@@ -79,7 +79,7 @@ class FoodItem extends React.Component {
                   data-food-item-id={foodItem.id}
                 />
                 <span className="checkmark"></span>
-                {foodItem.name} - {foodItem.price} PLN
+                {foodItem.name} / {foodItem.price} PLN
 
               </label>
             )
