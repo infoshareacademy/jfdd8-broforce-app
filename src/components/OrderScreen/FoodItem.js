@@ -3,7 +3,6 @@ import '../../index.css';
 import firebase from 'firebase'
 import '../App.css';
 import {connect} from 'react-redux'
-
 import foodItems from './foodItems'
 
 class FoodItem extends React.Component {
@@ -48,8 +47,8 @@ class FoodItem extends React.Component {
   componentDidMount() {
     const userUid = this.props.user.uid;
 
-
-    firebase.database().ref('/orders/' + userUid).on(
+    this.path = 'orders/' + userUid;
+    this.listener = firebase.database().ref('/orders/' + userUid).on(
       'value',
       snapshot => {
         const snapshotValue = snapshot.val();
@@ -57,9 +56,12 @@ class FoodItem extends React.Component {
           selectedFoodItemIds: snapshotValue === null ? [] : snapshotValue.selectedFoodItemIds ? snapshotValue.selectedFoodItemIds.split(",") : []
         });
       }
-    )
+    );
   }
 
+  componentWillUnmount() {
+    firebase.database().ref(this.path).off('value', this.listener)
+  };
 
   render() {
 
