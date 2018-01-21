@@ -7,8 +7,8 @@ import SignInWithGoogle from "./SignInWithGoogle";
 const errorMessages = {
   'auth/email-already-in-use': 'ten email jest już w naszej bazie',
   'auth/user-not-found': 'niestety, nie ma takiego użytkownika :(',
-  'auth/wrong-password': 'zdaje mi się, że źle wpisałeś hasło ;)',
-  'auth/invalid-email': 'zdaje mi się, że źle wpisałeś email ;)'
+  'auth/wrong-password': 'zdaje się, że źle wpisałeś hasło ;)',
+  'auth/invalid-email': 'zdaje się, że źle wpisałeś email ;)'
 
 };
 
