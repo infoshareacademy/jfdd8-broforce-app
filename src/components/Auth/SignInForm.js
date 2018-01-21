@@ -5,10 +5,10 @@ import '../App.css';
 import SignInWithGoogle from "./SignInWithGoogle";
 
 const errorMessages = {
-  'auth/email-already-in-use': 'Taki użytkownik już istnieje  :)',
-  'auth/user-not-found': 'Niema takiego użytkownika',
-  'auth/wrong-password': 'Nieprawidłowe hasło!',
-  'auth/invalid-email': 'Adres email niepoprawny, spróbuj ponownie'
+  'auth/email-already-in-use': 'ten email jest już w naszej bazie',
+  'auth/user-not-found': 'niestety, nie ma takiego użytkownika :(',
+  'auth/wrong-password': 'zdaje mi się, że źle wpisałeś hasło ;)',
+  'auth/invalid-email': 'zdaje mi się, że źle wpisałeś email ;)'
 
 };
 

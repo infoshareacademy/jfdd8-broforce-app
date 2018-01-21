@@ -3,12 +3,11 @@ import FoodItem from './FoodItem';
 import LogOut from "../LogOut";
 import OrderButtonNavigation from '../OrderButtonNavigation';
 import '../App.css';
+import { connect } from 'react-redux';
 
 class FoodScreen extends Component {
   handleClearAll = event => {
-    let emptyArray = [];
-
-    this.props.selectedFoodItemIds = emptyArray;
+    this.props.selectedFoodItemIds = null;
   };
 
     render() {
@@ -26,4 +25,8 @@ class FoodScreen extends Component {
     }
 }
 
-export default FoodScreen;
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(FoodScreen);
