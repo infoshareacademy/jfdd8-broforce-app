@@ -24,7 +24,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: inset 0 0 0px 9999px #05b2f7;
 }
 .wrapper {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
