@@ -5,10 +5,10 @@ import '../App.css';
 import SignInWithGoogle from "./SignInWithGoogle";
 
 const errorMessages = {
-  'auth/email-already-in-use': 'Taki użytkownik już istnieje  :)',
-  'auth/user-not-found': 'Niema takiego użytkownika',
-  'auth/wrong-password': 'Nieprawidłowe hasło!',
-  'auth/invalid-email': 'Adres email niepoprawny, spróbuj ponownie'
+  'auth/email-already-in-use': 'ten email jest już w naszej bazie',
+  'auth/user-not-found': 'niestety, nie ma takiego użytkownika :(',
+  'auth/wrong-password': 'zdaje się, że źle wpisałeś hasło ;)',
+  'auth/invalid-email': 'zdaje się, że źle wpisałeś email ;)'
 
 };
 
@@ -66,7 +66,7 @@ class SignInForm extends Component {
             {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code] || this.state.error.code}</p>}
           </div>
 
-          <button className="login-button login-b">Zaloguj się</button>
+          <button className="login-button login-b">zaloguj się</button>
           <SignInWithGoogle/>
         </form>
       </div>

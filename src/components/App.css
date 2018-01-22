@@ -1,34 +1,3 @@
-/*.App {*/
-/*text-align: center;*/
-/*}*/
-
-/*.App-logo {*/
-/*animation: App-logo-spin infinite 20s linear;*/
-/*height: 80px;*/
-/*}*/
-
-/*.App-header {*/
-/*background-color: dodgerblue;*/
-/*height: 150px;*/
-/*padding: 20px;*/
-/*color: white;*/
-/*}*/
-
-/*.App-title {*/
-/*font-size: 1.5em;*/
-/*color: white;*/
-/*}*/
-
-/*.App-intro {*/
-/*font-size: large;*/
-/*}*/
-
-/*@keyframes App-logo-spin {*/
-/*from { transform: rotate(0deg); }*/
-/*to { transform: rotate(360deg); }*/
-/*}*/
-
-
 body {
     background-image: url("back2.jpg");
     background-attachment: fixed;
@@ -70,7 +39,7 @@ input:-webkit-autofill {
 }
 .zamow-button {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 0;
 }
 .App-title {
     margin: 40px 0;

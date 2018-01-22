@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import firebase from 'firebase'
 import moment from 'moment'
 import 'moment/locale/pl';
 import foodItems from './foodItems'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import '../App.css';
 
 moment.locale('pl');
@@ -17,11 +17,11 @@ class OrderItems extends Component {
   componentDidMount() {
     const userUid = this.props.user.uid;
 
-    setInterval(
+    this.interval = setInterval(
       () => this.forceUpdate(), 1000
     );
-
-    firebase.database().ref('/orders/' + userUid).on(
+    this.path = 'orders/' + userUid;
+    this.listener = firebase.database().ref('/orders/' + userUid).on(
       'value',
       snapshot => {
         const snapshotValue = snapshot.val();
@@ -33,22 +33,29 @@ class OrderItems extends Component {
     )
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+    firebase.database().ref(this.path).off('value', this.listener)
+  };
+
   render() {
 
     const orderedFoodItems = this.state.orderedFood.map(
       id => foodItems.find(item => item.id === id)
     );
-    return(
-      <div className="wrapper"> Zamowienie odbierz {moment(this.state.time).add(15, 'minutes').fromNow()}
-      <p>Twoje zamówienie:</p>
+    return (
+      <div className="wrapper"> Szama będzie {moment(this.state.time).add(15, 'minutes').fromNow()}
+        <p>Zamówiłeś:</p>
 
         {
           orderedFoodItems.map(
             item => (
-              <p>{item.name} {item.price}</p>
+              <p
+              key={item.id.toString()}
+              >{item.name} {item.price}</p>
             )
           )
-        } Wartość zamówienia :
+        } Przygotuj:
         {
           orderedFoodItems.reduce((total, next) => total + next.price, 0)
         } PLN
@@ -56,4 +63,5 @@ class OrderItems extends Component {
     )
   }
 }
-export default connect(state => ({ user: state.auth.user }))(OrderItems)
+
+export default connect(state => ({user: state.auth.user}))(OrderItems)
