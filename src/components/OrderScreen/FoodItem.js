@@ -2,7 +2,8 @@ import React from 'react'
 import '../../index.css';
 import firebase from 'firebase'
 import '../App.css';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+
 import foodItems from './foodItems'
 
 class FoodItem extends React.Component {
